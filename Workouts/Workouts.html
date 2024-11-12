@@ -1,24 +1,52 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>My Website</title>
-  <link rel="stylesheet" href="Workouts.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Workouts.css">
+    <title>Workouts</title>
 </head>
 <body>
-  <nav>
-    <ul>
-      <li><a href="#">Home</a></li>
-      <li><a href="#">Macros Calculator</a></li>
-      <li><a href="#">Workouts</a></li>
-      <li><a href="#">Shop</a></li>
-      <li><a href="#">About Us</a></li>
-    </ul>
-    <div class="login-container">
-      <a href="#">Login</a>
-    </div>
-  </nav>
-  <div class="content">
-  </div>
+    <header>
+        <nav class="header-container">
+            <ul class="navigation-menu">
+                <li><a href="home.html">Home</a></li>
+                <li><a href="Workouts.html">Workouts</a></li>
+                <li><a href="#">Macros Calculator</a></li>
+                <li><a href="#">Shop</a></li>
+                <li><a href="#">About Us</a></li>
+            </ul>
+            <div class="login-section">
+                <h3>Login</h3>
+                <img src="Images/hamburger menu icon.png" alt="Menu icon">
+            </div>
+        </nav>
+    </header>
 
+    <main class="workout-selection">
+        <h1>Select Your Workout</h1>
+        <div class="workout-options">
+            <div class="level-select">
+                <h2>Choose Your Level</h2>
+                <button class="level-button" data-level="beginner">Beginner</button>
+                <button class="level-button" data-level="intermediate">Intermediate</button>
+                <button class="level-button" data-level="advanced">Advanced</button>
+            </div>
+            <div class="muscle-select">
+                <h2>Select Muscle Group</h2>
+                <button class="muscle-button" data-muscle="chest">Chest</button>
+                <button class="muscle-button" data-muscle="back">Back</button>
+                <button class="muscle-button" data-muscle="legs">Legs</button>
+                <button class="muscle-button" data-muscle="arms">Arms</button>
+                <button class="muscle-button" data-muscle="shoulders">Shoulders</button>
+                <button class="muscle-button" data-muscle="core">Core</button>
+            </div>
+        </div>
+        <div id="workout-results">
+            
+        </div>
+    </main>
+
+    <script src="Workouts.js"></script>
 </body>
 </html>
