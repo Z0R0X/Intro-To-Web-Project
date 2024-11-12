@@ -15,7 +15,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
         let bmr;
 
-        // Basic calorie formula based on gender
         if (gender.toLowerCase() === "male") {
             bmr = 88.36 + (13.4 * weight) + (4.8 * height) - (5.7 * age);
         } else if (gender.toLowerCase() === "female") {
@@ -25,8 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
-        // Adjust BMR based on activity level (example values)
-        let activityMultiplier = 1.2; // sedentary by default
+        let activityMultiplier = 1.2; 
         switch (activity.toLowerCase()) {
             case 'sedentary':
                 activityMultiplier = 1.2;
