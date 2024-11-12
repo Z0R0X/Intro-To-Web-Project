@@ -53,14 +53,14 @@ li {
     height: 40px;
     width: auto;
 }
-.Hero-Section{
-    height: 300px;
+.hero-section{
+    height: 400px;
     display: flex;
     justify-content:flex-end;
 }
-.Hero-Section img{
+.hero-section img{
     width: 100%;
-    
+    height: 400px;
 }
 .center{
     position:absolute;
@@ -68,8 +68,19 @@ li {
     left: 10%;
     color: azure;
 }
+.green-line h3{
+    color: #A5DD0F;
+}
+.green-line{
+    display: flex;
+    
+}
+.green-line img{
+height: 20px;
+width: 200px;
+}
 .categories{
-    background: linear-gradient(to bottom, green 70%, black 30%);
+    background: linear-gradient(to bottom, #A5DD0F 70%, black 30%);
     display: flex;
     justify-content: center;
     align-items: end;
@@ -84,27 +95,26 @@ li {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    margin: 20px;
-    gap: 10px;
+    margin: 40px 0;
 }
 .itemtype img{
-    height: 150px;
+    height: 200px;
     width: auto;
-    margin: 0 25px;
+    margin: 0 10px;
 }
 .itemtype{
  width: auto;
-    background: linear-gradient(to bottom, black 50%, green 50%);
+    background: linear-gradient(to bottom, black 50%, #A5DD0F 50%);
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
 }
 .itemtype button{
 color: black;
-background-color: rgb(30, 157, 30);
+background-color: #6c9206;
 position: relative;
 top: 15px;
-left: 15px;
+left: 45px;
 padding: 5px;
 text-align: center;
 width: 120px;
@@ -121,6 +131,7 @@ cursor: pointer;
 }
 .advice img{
     width: 50%;
+    max-height: 400px;
 }
 .nutrition-advice{
     display: flex;
@@ -130,7 +141,10 @@ cursor: pointer;
     width: 50%;
     align-items: center;
     justify-content: center;
-
+}
+.nutrition-advice p{
+    width: 70%;
+    margin: 20px;
 }
 .input{
     display: flex;
@@ -140,12 +154,12 @@ cursor: pointer;
 .input input{
     margin: 10px;
 }
-.input p{
+.input label{
     margin: 10px;
     width: 50px;
 }
 .nutrition-advice button{
-    background-color: green;
+    background-color: #A5DD0F;
     padding: 10px;
    position: relative;
    left: 30px;
@@ -154,7 +168,7 @@ cursor: pointer;
 
 
 .excl{
-    background: linear-gradient(to bottom, black 70%, green 30%);
+    background: linear-gradient(to bottom, black 70%, #A5DD0F 30%);
     display: flex;
     justify-content: center;
     align-items: end;
@@ -166,26 +180,48 @@ cursor: pointer;
     flex-wrap: wrap;
     justify-content: space-around;
     gap: 10px;
-    background-color: green;
+    background-color: #A5DD0F;
+    height: 150px;
+}
+.exclusive img{
     height: 100px;
+    width: auto;
+    padding: 20px;
 }
 .reviews{
     background-color: black;
-    margin: 50px;
-    text-align: center;
+    padding: 40px;
 }
 .reviews h2{
     color:white;
     margin: 20px;
+    text-align: center;
+}
+.reviews button{
+   background-color:#A5DD0F;
+    text-align: center;
+    padding: 10px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+.center-button{
+    display: flex;
+    justify-content: center;
 }
 .review-box{
-    height: 150px;
-    width: 200px;
-    background-color: green;
+    height: auto;
+    width: 300px;
+    background-color: #A5DD0F;
+    padding: 20px;
+    border-radius: 20px;
+}
+.review-box img {
+    width: auto;
+height: 40px;
 }
 footer{
     padding:20px;
-    background-color: green;
+    background-color: #A5DD0F;
 }
 .foot{
     display:flex;
@@ -205,4 +241,12 @@ footer{
 }
 .contact input{
     margin: 5px;
+}
+.foot-img{
+    width: auto;
+    height: 30px;
+    gap: 10px;
+    display: flex;
+    justify-content: center;
+    margin: 15px;
 }
