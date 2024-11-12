@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="Workouts.css">
     <title>Workouts</title>
 </head>
+
 <body>
     <header>
         <nav class="header-container">
@@ -13,7 +15,7 @@
                 <li><a href="home.html">Home</a></li>
                 <li><a href="Workouts.html">Workouts</a></li>
                 <li><a href="#">Macros Calculator</a></li>
-                <li><a href="#">Shop</a></li>
+                <li><a href="index.html">Shop</a></li>
                 <li><a href="#">About Us</a></li>
             </ul>
             <div class="login-section">
@@ -31,7 +33,9 @@
                 <button class="level-button" data-level="beginner">Beginner</button>
                 <button class="level-button" data-level="intermediate">Intermediate</button>
                 <button class="level-button" data-level="advanced">Advanced</button>
+                <button class="reset-button" id="reset-level">Reset Level</button>
             </div>
+
             <div class="muscle-select">
                 <h2>Select Muscle Group</h2>
                 <button class="muscle-button" data-muscle="chest">Chest</button>
@@ -40,13 +44,15 @@
                 <button class="muscle-button" data-muscle="arms">Arms</button>
                 <button class="muscle-button" data-muscle="shoulders">Shoulders</button>
                 <button class="muscle-button" data-muscle="core">Core</button>
+                <button class="reset-button" id="reset-muscle">Reset Muscle</button>
             </div>
         </div>
         <div id="workout-results">
-            
+
         </div>
     </main>
 
     <script src="Workouts.js"></script>
 </body>
+
 </html>
