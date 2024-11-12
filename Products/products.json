@@ -1,0 +1,35 @@
+{
+    "categories": [
+    {
+      "name": "Weights",
+      "image": "images/weights-category.jpg"
+    },
+    {
+      "name": "Yoga",
+      "image": "images/yoga-category.jpg"
+    }
+],
+    "products":[
+  {
+    "id": 1,
+    "name": "Dumbbell Set",
+    "price": 29.99,
+    "category": "Weights",
+    "image": "images/dumbbell.jpg"
+  },
+  {
+    "id": 2,
+    "name": "Yoga Mat",
+    "price": 19.99,
+    "category": "Yoga",
+    "image": "images/yogamat.jpg"
+  },
+  {
+    "id": 3,
+    "name": "Kettlebell",
+    "price": 39.99,
+    "category": "Weights",
+    "image": "images/kettlebell.jpg"
+  }
+]
+}
