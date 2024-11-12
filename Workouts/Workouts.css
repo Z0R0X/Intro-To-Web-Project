@@ -126,10 +126,27 @@ h1 {
   border: 1px solid #ffca28;
 }
 
+.reset-button {
+  background-color: purple; 
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.reset-button:hover {
+  background-color: #ff5722;
+  color: white;
+}
+
 #workout-results {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); 
+  gap: 20px;
+  margin:15px;
 }
 
 .workout-list {
@@ -170,4 +187,13 @@ h1 {
   font-size: 14px;
   color: #e0e0e0;
   margin: 5px 0;
+}
+
+.workout-item ul {
+  list-style-type: none; 
+  padding-left: 0;       
+}
+
+.workout-item li {
+  padding: 5px 0;        
 }
