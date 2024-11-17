@@ -111,6 +111,26 @@ button:hover {
   box-shadow: var(--box-shadow-hover);
 }
 
+.reset-button {
+  background-color: var(--secondary-color); 
+  color: var(--background-color); 
+  border: 2px solid var(--secondary-color);
+  padding: 15px 30px;
+  margin: 10px;
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.3s, background-color 0.3s, box-shadow 0.3s;
+}
+
+.reset-button:hover {
+  background-color: var(--text-color);
+  color: var(--secondary-color); 
+  transform: scale(1.1);
+  box-shadow: 0 10px 20px rgba(255, 87, 34, 0.6);
+}
+
 .workout-selection {
   padding: 60px 20px;
   background: rgba(0, 0, 0, 0.8); 
@@ -163,7 +183,6 @@ button:hover {
 }
 
 .workout-item {
-  width:auto;
   color: var(--text-color);
   border: 2px solid var(--primary-color);
   padding: 25px;
@@ -182,7 +201,6 @@ button:hover {
 
 .workout-item:hover {
   transform: scale(1.05);
-  background: #2a2a2a;
   box-shadow: var(--box-shadow-hover);
 }
 
