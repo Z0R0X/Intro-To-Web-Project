@@ -27,6 +27,11 @@ header {
   position: relative;
 }
 
+.Logo{
+  height: 50px;
+  width:auto;
+}
+
 header::after {
   content: "";
   position: absolute;
@@ -155,8 +160,7 @@ button:hover {
   justify-content: center;
 }
 
-.level-select,
-.muscle-select {
+.level-select,.muscle-select {
   border: 2px solid var(--primary-color);
   border-radius: 15px;
   padding: 40px;
@@ -168,8 +172,7 @@ button:hover {
   color: var(--text-color);
 }
 
-.level-select:hover,
-.muscle-select:hover {
+.level-select:hover,.muscle-select:hover {
   transform: scale(1.1);
   box-shadow: var(--box-shadow-hover);
 }
@@ -219,11 +222,13 @@ button:hover {
 @media (max-width: 768px) {
   .header-container {
     flex-direction: column;
+    flex-wrap: wrap;
     padding: 20px;
   }
 
   .navigation-menu {
     flex-direction: column;
+    flex-wrap: wrap;
     gap: 10px;
   }
 
@@ -236,21 +241,68 @@ button:hover {
   }
 }
 
-@media (max-width: 480px) {
-  .header-container {
-    padding: 10px;
-  }
-
-  .navigation-menu a {
-    font-size: 0.8rem;
-    padding: 8px;
-  }
-
-  .workout-selection h1 {
-    font-size: 2rem;
-  }
-
-  .workout-options {
-    flex-direction: column;
-  }
+.footer {
+  padding: 60px 20px;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    margin-top: 50px;
+    text-align: center;
 }
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 30px;
+}
+
+.footer-content > div {
+  flex: 1;
+  margin: 10px;
+  min-width: 250px;
+}
+
+.footer h3 {
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  color: var(--primary-color);
+  border-bottom: 2px solid var(--primary-color);
+  display: inline-block;
+}
+
+.footer p {
+  margin-bottom: 10px;
+  line-height: 1.6;
+  color: #ccc;
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links ul li {
+  margin: 8px 0;
+}
+
+.footer-links ul li a {
+  text-decoration: none;
+  color: var(--text-color);
+  transition: color 0.3s;
+}
+
+.footer-links ul li a:hover {
+  color: var(--primary-color);
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 20px;
+  padding-top: 10px;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  font-size: 0.8rem;
+  color: #777;
+}
+
