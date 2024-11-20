@@ -88,6 +88,7 @@ header {
     color: var(--text-color);
     padding: 80px 40px;
     font-size: 1.4rem;
+    text-align: center;
   }
   
   .footer-content {
@@ -131,6 +132,7 @@ header {
     border-top: 2px solid var(--primary-color);
     padding-top: 30px;
     font-size: 1.4rem;
+    padding-right: 130px;
   }
   
   .footer-bottom h3 {

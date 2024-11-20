@@ -129,8 +129,9 @@ hr
     background-color: black;
 }
 
-footer
-{
-    background-color: rgb(61, 61, 61);
+.footer {
+    background: var(--gradient-bg);
+    padding: 40px;
+    color: var(--text-color);
 }
 

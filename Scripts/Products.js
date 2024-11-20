@@ -24,7 +24,7 @@ function loadCart() {
 }
 function loadProducts()
 {
-    fetch('/Scripts/Products.json')
+    fetch('./Scripts/Products.json')
   .then(response => response.json())
   .then(data => {
     let categories = data.categories;
