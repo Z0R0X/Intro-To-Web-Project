@@ -1,125 +1,121 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="stylesheet" href="Styles/Common.css" />
-        <link rel="stylesheet" href="Styles/Workouts.css" />
-        <title>Workouts</title>
-    </head>
 
-    <body>
-        <header>
-            <nav class="header-container">
-                <img src="Images/Workouts/Logo.jpg" alt="" class="Logo" />
-                <ul class="navigation-menu">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="Workouts.html">Workouts</a></li>
-                    <li><a href="#">Macros Calculator</a></li>
-                    <li><a href="Products.html">Shop</a></li>
-                    <li><a href="#">About Us</a></li>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="Styles/Common.css" />
+    <link rel="stylesheet" href="Styles/Workouts.css" />
+    <title>Workouts</title>
+</head>
+
+<body>
+    <header>
+        <nav class="header-container">
+            <img src="Images/Workouts/Logo.jpg" alt="" class="Logo" />
+            <ul class="navigation-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="Workouts.html">Workouts</a></li>
+                <li><a href="Calculator.html">Macros Calculator</a></li>
+                <li><a href="Products.html">Shop</a></li>
+                <li><a href="About-Us.html">About Us</a></li>
+            </ul>
+            <div class="login-section">
+                <a href="login.html" class="login-button">Login</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="workout-selection">
+        <h1>Select Your Workout</h1>
+        <div class="workout-options">
+            <div class="level-select">
+                <h2>Choose Your Level</h2>
+                <button class="level-button" data-level="beginner">
+                    Beginner
+                </button>
+                <button class="level-button" data-level="intermediate">
+                    Intermediate
+                </button>
+                <button class="level-button" data-level="advanced">
+                    Advanced
+                </button>
+                <button class="reset-button" id="reset-level">
+                    Reset Level
+                </button>
+            </div>
+
+            <div class="muscle-select">
+                <h2>Select Muscle Group</h2>
+                <button class="muscle-button" data-muscle="chest">
+                    Chest
+                </button>
+                <button class="muscle-button" data-muscle="back">
+                    Back
+                </button>
+                <button class="muscle-button" data-muscle="legs">
+                    Legs
+                </button>
+                <button class="muscle-button" data-muscle="arms">
+                    Arms
+                </button>
+                <button class="muscle-button" data-muscle="shoulders">
+                    Shoulders
+                </button>
+                <button class="muscle-button" data-muscle="core">
+                    Core
+                </button>
+                <button class="reset-button" id="reset-muscle">
+                    Reset Muscle
+                </button>
+            </div>
+        </div>
+        <div id="workout-results"></div>
+    </main>
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="support">
+                <h2>Support</h2>
+                <ul>
+                    <li><a href="mailto: support@trainandthrive.com">Help Center</a></li>
+                    <li><a href="About-Us.html">About Us</a></li>
                 </ul>
-                <div class="login-section">
-                    <a href="login.html" class="login-button">Login</a>
-                </div>
-            </nav>
-        </header>
-
-        <main class="workout-selection">
-            <h1>Select Your Workout</h1>
-            <div class="workout-options">
-                <div class="level-select">
-                    <h2>Choose Your Level</h2>
-                    <button class="level-button" data-level="beginner">
-                        Beginner
-                    </button>
-                    <button class="level-button" data-level="intermediate">
-                        Intermediate
-                    </button>
-                    <button class="level-button" data-level="advanced">
-                        Advanced
-                    </button>
-                    <button class="reset-button" id="reset-level">
-                        Reset Level
-                    </button>
-                </div>
-
-                <div class="muscle-select">
-                    <h2>Select Muscle Group</h2>
-                    <button class="muscle-button" data-muscle="chest">
-                        Chest
-                    </button>
-                    <button class="muscle-button" data-muscle="back">
-                        Back
-                    </button>
-                    <button class="muscle-button" data-muscle="legs">
-                        Legs
-                    </button>
-                    <button class="muscle-button" data-muscle="arms">
-                        Arms
-                    </button>
-                    <button class="muscle-button" data-muscle="shoulders">
-                        Shoulders
-                    </button>
-                    <button class="muscle-button" data-muscle="core">
-                        Core
-                    </button>
-                    <button class="reset-button" id="reset-muscle">
-                        Reset Muscle
-                    </button>
-                </div>
             </div>
-            <div id="workout-results"></div>
-        </main>
-        <footer class="footer">
-            <div class="footer-content">
-                <div class="support">
-                    <h2>Support</h2>
-                    <ul>
-                        <li><a href="#">FAQ</a></li>
-                        <li><a href="#">Help Center</a></li>
-                        <li><a href="#">About Us</a></li>
-                    </ul>
-                </div>
-                <div class="customer-service">
-                    <h2>Customer Service</h2>
-                    <ul>
-                        <li><a href="#">Track Your Order</a></li>
-                        <li><a href="#">Returns & Exchange</a></li>
-                        <li><a href="#">Gift Certificates</a></li>
-                    </ul>
-                </div>
-                <div class="contact-us">
-                    <h2>Contact Us</h2>
-                    <ul>
-                        <li><a href="tel:+961">Call: +961</a></li>
-                        <li>
-                            <a href="mailto:email@domain.com"
-                                >Email: email@domain.com</a
-                            >
-                        </li>
-                    </ul>
-                </div>
+            <div class="customer-service">
+                <h2>Customer Service</h2>
+                <ul>
+                    <li><a href="Cart.html">Track Your Order</a></li>
+                    <li><a href="Products.html#gift-certificate">Gift Certificates</a></li>
+                </ul>
             </div>
-            <div class="footer-bottom">
-                <h3>Follow Us</h3>
-                <div class="social-media">
-                    <a href="#"
-                        ><img src="Images/Workouts/facebook.png" alt="Facebook"
-                    /></a>
-                    <a href="#"
-                        ><img src="Images/Workouts/whatsapp.png" alt="WhatsApp"
-                    /></a>
-                    <a href="#"
-                        ><img
-                            src="Images/Workouts/instagram.png"
-                            alt="Instagram"
-                    /></a>
-                </div>
-                <p>&copy; 2024 Train & Thrive. All Rights Reserved.</p>
+            <div class="contact-us">
+                <h2>Contact Us</h2>
+                <ul>
+                    <li><a href="tel:+961 81 932 062">Call: +961 81 932 062</a></li>
+                    <li>
+                        <a href="mailto:Train&Thrive@outlook.com">Email: Train&Thrive@outlook.com</a>
+                    </li>
+                </ul>
             </div>
-        </footer>
+        </div>
+        <div class="footer-bottom">
+            <h3>Follow Us</h3>
+            <div class="social-media">
+                <a href="https://www.facebook.com/trainandthrive">
+                    <img src="Images/Workouts/facebook.png" target="_blank" /></a>
 
-        <script src="Scripts/Workouts.js"></script>
-    </body>
+                <a href="https://wa.me/81932062"><img src="Images/Workouts/whatsapp.png" target="_blank" /></a>
+
+                <a href="https://www.instagram.com/trainandthrive">
+
+                    <img src="Images/Workouts/instagram.png" target="_blank" /></a>
+
+            </div>
+            <p>&copy; 2024 Train & Thrive. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="Scripts/Workouts.js"></script>
+</body>
+
 </html>
