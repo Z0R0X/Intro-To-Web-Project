@@ -1,0 +1,136 @@
+:root
+{
+    --green: #00ff00;
+}
+*
+{
+    padding: 0;
+    margin: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    text-align: center;
+}
+header
+{
+    background-image: url("/Images/Products/background.jpg");
+    background-size: cover;
+    height: 900px;
+}
+#hero
+{
+    height: 100%;
+    width: 100%;
+}
+#hero p
+{
+    position: relative;
+    left: 200px;
+    top: 300px;
+    width: 500px;
+    font-size: 48px;
+    color: white;
+}
+#hero span
+{
+    color: var(--green);
+}
+main
+{
+    background-color: var(--green);
+}
+#links
+{
+    height: 200px;
+    margin-left: 60px;
+    margin-right: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.link img
+{
+    height: 100px
+}
+hr
+{
+    border-top: 50px solid;
+}
+.storePart
+{
+    height: 1000px;
+}
+.itemParent
+{
+    width: auto;
+    margin-top: 50px;
+    padding: 50px;
+    padding-left: 100px;
+    padding-right: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+.item
+{
+    width: 400px;
+    border: solid 10px;
+    border-radius: 20px;
+}
+.item div
+{
+    background-color: black;
+    color: var(--green);
+}
+.item img
+{
+    width: 300px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.item p
+{
+    color: white;
+}
+.item button
+{
+    border-radius: 10px;
+    background-color: var(--green);
+    width: 200px;
+    height: 30px;
+    color: white;
+}
+
+.storePart:nth-child(2n+1)
+{
+    background-color: black;
+}
+
+.storePart:nth-child(2n+1) hr
+{
+    color: var(--green);
+}
+.storePart:nth-child(2n+1) h1
+{
+    color: var(--green);
+}
+.storePart:nth-child(2n+1) .item
+{
+    border-color: var(--green);
+    background-color: black;
+}
+.storePart:nth-child(2n+1) div
+{
+    color: black;
+    background-color: var(--green);
+}
+.storePart:nth-child(2n+1) button
+{
+    background-color: black;
+}
+
+footer
+{
+    background-color: rgb(61, 61, 61);
+}
+

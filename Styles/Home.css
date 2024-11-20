@@ -1,0 +1,190 @@
+:root {
+    --primary-color: #00ff00;
+    --secondary-color: #ff5722;
+    --background-color: #000000;
+    --text-color: #ffffff;
+    --button-hover: #1e1e1e;
+    --gradient-bg: linear-gradient(135deg, #1e1e1e, #000000);
+    --box-shadow-hover: 0 10px 20px rgba(0, 255, 0, 0.6);
+  }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: black;
+}
+li {
+    list-style: none;
+}
+header
+{
+    background-image: url("/Images/Home\ page/heroImage.png");
+    background-size: cover;
+    height: 700px;
+}
+.hero-section{
+    height: 400px;
+    display: flex;
+    justify-content:flex-end;
+    overflow: hidden;
+}
+.center{
+    position:absolute;
+    top: 25%;
+    left: 10%;
+    color: azure;
+}
+.green-line h3{
+    color: var(--primary-color);
+}
+.green-line{
+    display: flex;
+    
+}
+.green-line img{
+height: 20px;
+width: 200px;
+}
+.categories{
+    background: linear-gradient(to bottom, var(--primary-color) 70%, black 30%);
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    height: 40px;
+}
+
+.categories h2{
+    margin-top: 10px;
+    color:white;
+}
+.item{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 40px 0;
+}
+.itemtype img{
+    height: 200px;
+    width: auto;
+    margin: 0 10px;
+}
+.itemtype{
+ width: auto;
+    background: linear-gradient(to bottom, black 50%, var(--primary-color) 50%);
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+.itemtype button{
+color: black;
+background-color: var(--primary-color);
+position: relative;
+top: 15px;
+left: 45px;
+padding: 5px;
+text-align: center;
+width: 120px;
+height: 30px;
+border-radius: 10px;
+border: none;
+cursor: pointer;
+}
+.advice{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    width: 100%;
+}
+.advice img{
+    margin-left: 300px;
+    width: 25%;
+    max-height: 400px;
+}
+.nutrition-advice{
+    display: flex;
+    flex-wrap: wrap;
+    color: white;
+    flex-direction: column;
+    width: 50%;
+    align-items: center;
+    justify-content: center;
+}
+.nutrition-advice p{
+    width: 70%;
+    margin: 20px;
+}
+.input{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+.input input{
+    margin: 10px;
+}
+.input label{
+    margin: 10px;
+    width: 50px;
+}
+.nutrition-advice button{
+    background-color: var(--primary-color);
+    padding: 10px;
+   position: relative;
+   left: 30px;
+   border-radius: 10px;
+}
+
+
+.excl{
+    background: linear-gradient(to bottom, black 70%, var(--primary-color) 30%);
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    height: 40px;
+    color: white;
+}
+.exclusive{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 10px;
+    background-color: var(--primary-color);
+    height: 150px;
+}
+.exclusive img{
+    height: 100px;
+    width: auto;
+    padding: 20px;
+}
+.reviews{
+    background-color: black;
+    padding: 40px;
+}
+.reviews h2{
+    color:white;
+    margin: 20px;
+    text-align: center;
+}
+.reviews button{
+   background-color:var(--primary-color);
+    text-align: center;
+    padding: 10px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+.center-button{
+    display: flex;
+    justify-content: center;
+}
+.review-box{
+    height: auto;
+    width: 300px;
+    background-color: var(--primary-color);
+    padding: 20px;
+    border-radius: 20px;
+}
+.review-box img {
+    width: auto;
+height: 40px;
+}
