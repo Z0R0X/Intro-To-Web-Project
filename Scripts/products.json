@@ -2,19 +2,19 @@
     "categories": [
     {
       "name": "Protein Powders",
-      "image": "/Images/Products/protien.png"
+      "image": "../Images/Products/protien.png"
     },
     {
       "name": "Flakes",
-      "image": "/Images/Products/flakes.png"
+      "image": "../Images/Products/flakes.png"
     },
     {
       "name": "Mass Gainer",
-      "image": "/Images/Products/mass.png"
+      "image": "../Images/Products/mass.png"
     },
     {
       "name": "Energy Flavors",
-      "image": "/Images/Products/energy.png"
+      "image": "../Images/Products/energy.png"
     }
 ],
     "products":[
@@ -23,168 +23,168 @@
     "name": "MP Combat",
     "price": 60,
     "category": "Protein Powders",
-    "image": "images/dumbbell.jpg"
+    "image": "../Images/Products/storeitem.png"
   },
   {
     "id": 2,
     "name": "Whey Isolate",
     "price": 55,
     "category": "Protein Powders",
-    "image": "images/yogamat.jpg"
+    "image": "../Images/Products/storeitem.png"
   },
   {
     "id": 3,
     "name": "Gold Whey",
     "price": 65,
     "category": "Protein Powders",
-    "image": "images/yogamat.jpg"
+    "image": "../Images/Products/storeitem.png"
   },
   {
     "id": 4,
     "name": "Musashi High",
     "price": 70,
     "category": "Protein Powders",
-    "image": "images/yogamat.jpg"
+    "image": "../Images/Products/storeitem.png"
   },
   {
     "id": 5,
     "name": "Euphoriq Pre-Workout",
     "price": 55,
     "category": "Protein Powders",
-    "image": "images/yogamat.jpg"
+    "image": "../Images/Products/storeitem.png"
   },
   {
     "id": 6,
     "name": "BCAA Mega Size",
     "price": 45,
     "category": "Protein Powders",
-    "image": "images/yogamat.jpg"
+    "image": "../Images/Products/storeitem.png"
   },
   {
     "id": 7,
     "name": "Vanilla Cake",
     "price": 40,
     "category": "Flakes",
-    "image": "images/yogamat.jpg"
+    "image": "../Images/Products/storeitem.png"
   },
   {
     "id": 8,
     "name": "BlueBerry Yogurt",
     "price": 40,
     "category": "Flakes",
-    "image": "images/yogamat.jpg"
+    "image": "../Images/Products/storeitem.png"
   },
   {
     "id": 9,
     "name": "Vanilla Cake",
     "price": 40,
     "category": "Flakes",
-    "image": "images/yogamat.jpg"
+    "image": "../Images/Products/storeitem.png"
   },
   {
     "id": 10,
     "name": "S'mores Bar",
     "price": 40,
     "category": "Flakes",
-    "image": "images/yogamat.jpg"
+    "image": "../Images/Products/storeitem.png"
   },
   {
     "id": 11,
     "name": "Chocolate & Peanut Bar",
     "price": 40,
     "category": "Flakes",
-    "image": "images/yogamat.jpg"
+    "image": "../Images/Products/storeitem.png"
   },
   {
     "id": 12,
     "name": "Cookie Dough Bard",
     "price": 40,
     "category": "Flakes",
-    "image": "images/yogamat.jpg"
+    "image": "../Images/Products/storeitem.png"
   },
   {
     "id": 13,
     "name": "True-Mass Vanilla",
     "price": 19.99,
     "category": "Mass Gainer",
-    "image": "images/yogamat.jpg"
+    "image": "../Images/Products/storeitem.png"
   },
   {
     "id": 14,
     "name": "Dymatize Red",
     "price": 50,
     "category": "Mass Gainer",
-    "image": "images/yogamat.jpg"
+    "image": "../Images/Products/storeitem.png"
   },
   {
     "id": 15,
     "name": "True-Mass Chocolate",
     "price": 45,
     "category": "Mass Gainer",
-    "image": "images/yogamat.jpg"
+    "image": "../Images/Products/storeitem.png"
   },
   {
     "id": 16,
     "name": "Muscle Tech",
     "price": 55,
     "category": "Mass Gainer",
-    "image": "images/yogamat.jpg"
+    "image": "../Images/Products/storeitem.png"
   },
   {
     "id": 17,
     "name": "Gold Pro Gainer",
     "price": 55,
     "category": "Mass Gainer",
-    "image": "images/yogamat.jpg"
+    "image": "../Images/Products/storeitem.png"
   },
   {
     "id": 18,
     "name": "Essential Mass Gainer",
     "price": 50,
     "category": "Mass Gainer",
-    "image": "images/yogamat.jpg"
+    "image": "../Images/Products/storeitem.png"
   },
   {
     "id": 19,
     "name": "Amino Green Apple",
     "price": 40,
     "category": "Energy Flavors",
-    "image": "images/yogamat.jpg"
+    "image": "../Images/Products/storeitem.png"
   },
   {
     "id": 20,
     "name": "Amino Blueberry Mojito",
     "price": 40,
     "category": "Energy Flavors",
-    "image": "images/yogamat.jpg"
+    "image": "../Images/Products/storeitem.png"
   },
   {
     "id": 21,
     "name": "Amino WaterMelon",
     "price": 40,
     "category": "Energy Flavors",
-    "image": "images/yogamat.jpg"
+    "image": "../Images/Products/storeitem.png"
   },
   {
     "id": 22,
     "name": "Amino Tangerine",
     "price": 40,
     "category": "Energy Flavors",
-    "image": "images/yogamat.jpg"
+    "image": "../Images/Products/storeitem.png"
   },
   {
     "id": 23,
     "name": "Amino PineApple",
     "price": 40,
     "category": "Energy Flavors",
-    "image": "images/yogamat.jpg"
+    "image": "../Images/Products/storeitem.png"
   },
   {
     "id": 24,
     "name": "Amino Blue Raspberry",
     "price": 40,
     "category": "Energy Flavors",
-    "image": "images/yogamat.jpg"
+    "image": "../Images/Products/storeitem.png"
   }
 ]
 }

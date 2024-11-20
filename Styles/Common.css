@@ -165,3 +165,16 @@ header {
     font-size: 1.2rem;
     font-weight: 300;
   }
+@media screen and (max-width: 768px) {
+  .header-container {
+    flex-direction: column;
+    flex-wrap: wrap;
+    padding: 20px;
+  }
+
+  .navigation-menu {
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+}

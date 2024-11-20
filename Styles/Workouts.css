@@ -142,18 +142,8 @@ button:hover {
 }
 
 
-@media (max-width: 768px) {
-  .header-container {
-    flex-direction: column;
-    flex-wrap: wrap;
-    padding: 20px;
-  }
-
-  .navigation-menu {
-    flex-direction: column;
-    flex-wrap: wrap;
-    gap: 10px;
-  }
+@media screen and (max-width: 768px) {
+  
 
   .workout-selection h1 {
     font-size: 2.5rem;
@@ -163,8 +153,3 @@ button:hover {
     gap: 20px;
   }
 }
-
-
-
-
-

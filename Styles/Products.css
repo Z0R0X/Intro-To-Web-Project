@@ -1,7 +1,12 @@
-:root
-{
-    --green: #00ff00;
-}
+:root {
+    --primary-color: #00ff00;
+    --secondary-color: #ff5722;
+    --background-color: #000000;
+    --text-color: #ffffff;
+    --button-hover: #1e1e1e;
+    --gradient-bg: linear-gradient(135deg, #1e1e1e, #000000);
+    --box-shadow-hover: 0 10px 20px rgba(0, 255, 0, 0.6);
+  }
 *
 {
     padding: 0;
@@ -31,11 +36,11 @@ header
 }
 #hero span
 {
-    color: var(--green);
+    color: var(--primary-color);
 }
 main
 {
-    background-color: var(--green);
+    background-color: var(--primary-color);
 }
 #links
 {
@@ -50,13 +55,17 @@ main
 {
     height: 100px
 }
+.link:hover {
+    transform: scale(1.05);
+    box-shadow: var(--box-shadow-hover);
+  }
 hr
 {
     border-top: 50px solid;
 }
 .storePart
 {
-    height: 1000px;
+    height: auto;
 }
 .itemParent
 {
@@ -74,13 +83,25 @@ hr
 .item
 {
     width: 400px;
+    height: 500px;
     border: solid 10px;
     border-radius: 20px;
+    font-size: 1.5rem;
 }
+.item:hover {
+    transform: scale(1.05);
+    box-shadow: var(--box-shadow-hover);
+  }
 .item div
 {
     background-color: black;
-    color: var(--green);
+    color: var(--primary-color);
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
 }
 .item img
 {
@@ -95,11 +116,16 @@ hr
 .item button
 {
     border-radius: 10px;
-    background-color: var(--green);
-    width: 200px;
-    height: 30px;
+    background-color: var(--primary-color);
+    width: 210px;
+    height: 50px;
     color: white;
+    font-size: 1.5rem;
 }
+.item button:hover {
+    transform: scale(1.05);
+    box-shadow: var(--box-shadow-hover);
+  }
 
 .storePart:nth-child(2n+1)
 {
@@ -108,21 +134,24 @@ hr
 
 .storePart:nth-child(2n+1) hr
 {
-    color: var(--green);
+    color: var(--primary-color);
 }
 .storePart:nth-child(2n+1) h1
 {
-    color: var(--green);
+    color: var(--primary-color);
 }
 .storePart:nth-child(2n+1) .item
 {
-    border-color: var(--green);
+    border-color: var(--primary-color);
     background-color: black;
 }
+.storePart:nth-child(2n+1) .item:hover {
+    box-shadow: black;
+  }
 .storePart:nth-child(2n+1) div
 {
     color: black;
-    background-color: var(--green);
+    background-color: var(--primary-color);
 }
 .storePart:nth-child(2n+1) button
 {
