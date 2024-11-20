@@ -6,185 +6,302 @@
     --button-hover: #1e1e1e;
     --gradient-bg: linear-gradient(135deg, #1e1e1e, #000000);
     --box-shadow-hover: 0 10px 20px rgba(0, 255, 0, 0.6);
-  }
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-body{
-    background-color: black;
+
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
 }
-li {
-    list-style: none;
-}
-header
-{
-    background-image: url("/Images/Home\ page/heroImage.png");
+
+header {
+    background-image: url("/Images/Home page/heroImage.png");
     background-size: cover;
+    background-position: center;
     height: 700px;
-}
-.hero-section{
-    height: 400px;
-    display: flex;
-    justify-content:flex-end;
-    overflow: hidden;
-}
-.center{
-    position:absolute;
-    top: 25%;
-    left: 10%;
-    color: azure;
-}
-.green-line h3{
-    color: var(--primary-color);
-}
-.green-line{
-    display: flex;
-    
-}
-.green-line img{
-height: 20px;
-width: 200px;
-}
-.categories{
-    background: linear-gradient(to bottom, var(--primary-color) 70%, black 30%);
-    display: flex;
-    justify-content: center;
-    align-items: end;
-    height: 40px;
+    position: relative;
 }
 
-.categories h2{
-    margin-top: 10px;
-    color:white;
-}
-.item{
+.header-container {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    margin: 40px 0;
-}
-.itemtype img{
-    height: 200px;
-    width: auto;
-    margin: 0 10px;
-}
-.itemtype{
- width: auto;
-    background: linear-gradient(to bottom, black 50%, var(--primary-color) 50%);
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-}
-.itemtype button{
-color: black;
-background-color: var(--primary-color);
-position: relative;
-top: 15px;
-left: 45px;
-padding: 5px;
-text-align: center;
-width: 120px;
-height: 30px;
-border-radius: 10px;
-border: none;
-cursor: pointer;
-}
-.advice{
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    width: 100%;
-}
-.advice img{
-    margin-left: 300px;
-    width: 25%;
-    max-height: 400px;
-}
-.nutrition-advice{
-    display: flex;
-    flex-wrap: wrap;
-    color: white;
-    flex-direction: column;
-    width: 50%;
+    justify-content: space-between;
     align-items: center;
-    justify-content: center;
+    padding: 20px 40px;
+    background: rgba(0, 0, 0, 0.8);
 }
-.nutrition-advice p{
-    width: 70%;
-    margin: 20px;
-}
-.input{
+
+.navigation-menu {
     display: flex;
+    gap: 20px;
+}
+
+.navigation-menu a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+
+
+.hero-section {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100%;
+    color: var(--text-color);
+    padding-left: 10%;
+}
+
+.center h1 {
+    font-size: 3.5rem;
+    margin-bottom: 10px;
+}
+
+.green-line h3 {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+}
+
+.categories {
+    text-align: center;
+    background: var(--primary-color);
+    padding: 20px 0;
+}
+
+.categories h2 {
+    font-size: 2rem;
+}
+
+.item {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
     flex-wrap: wrap;
-    justify-content: space-evenly;
-}
-.input input{
-    margin: 10px;
-}
-.input label{
-    margin: 10px;
-    width: 50px;
-}
-.nutrition-advice button{
-    background-color: var(--primary-color);
-    padding: 10px;
-   position: relative;
-   left: 30px;
-   border-radius: 10px;
+    padding: 40px 0;
 }
 
+.itemtype {
+    background: var(--gradient-bg);
+    border-radius: 10px;
+    overflow: hidden;
+    text-align: center;
+    padding: 20px;
+    width: 280px;
+    box-shadow: 0 5px 15px rgba(0, 255, 0, 0.2);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
 
-.excl{
-    background: linear-gradient(to bottom, black 70%, var(--primary-color) 30%);
-    display: flex;
-    justify-content: center;
-    align-items: end;
-    height: 40px;
+.itemtype:hover {
+    transform: scale(1.05);
+    box-shadow: var(--box-shadow-hover);
+}
+
+.itemtype img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.itemtype button {
+    background: var(--primary-color);
+    color: black;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.itemtype button:hover {
+    background: var(--button-hover);
     color: white;
 }
-.exclusive{
+
+.advice {
     display: flex;
+    align-items: center;
     flex-wrap: wrap;
-    justify-content: space-around;
-    gap: 10px;
-    background-color: var(--primary-color);
-    height: 150px;
+    gap: 20px;
+    padding: 40px;
+    background: var(--background-color);
 }
-.exclusive img{
-    height: 100px;
-    width: auto;
+
+.advice img {
+    flex: 1;
+    max-width: 400px;
+    border-radius: 10px;
+}
+
+.nutrition-advice {
+    flex: 2;
+    color: var(--text-color);
+    background: var(--gradient-bg);
     padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 255, 0, 0.2);
 }
-.reviews{
-    background-color: black;
+
+.nutrition-advice p {
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+}
+
+.input {
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.input input, .input select {
+    width: 70%;
+    padding: 5px;
+    border: 1px solid var(--primary-color);
+    border-radius: 5px;
+}
+
+.nutrition-advice button {
+    background: var(--primary-color);
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.nutrition-advice button:hover {
+    background: var(--button-hover);
+    color: white;
+}
+
+.exclusive {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 40px;
+    background: var(--primary-color);
+}
+
+.service-card {
+    text-align: center;
+    background: var(--gradient-bg);
+    padding: 20px;
+    border-radius: 10px;
+    width: 280px;
+    box-shadow: 0 5px 15px rgba(0, 255, 0, 0.2);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.service-card:hover {
+    transform: scale(1.05);
+    box-shadow: var(--box-shadow-hover);
+}
+
+.service-card img {
+    width: 80px;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.reviews {
+    background: var(--background-color);
     padding: 40px;
 }
-.reviews h2{
-    color:white;
-    margin: 20px;
+
+.reviews h2 {
     text-align: center;
+    margin-bottom: 20px;
+    color: var(--text-color);
 }
-.reviews button{
-   background-color:var(--primary-color);
-    text-align: center;
-    padding: 10px;
-    border-radius: 20px;
-    cursor: pointer;
-}
-.center-button{
+
+.reviews-container {
     display: flex;
     justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
 }
-.review-box{
-    height: auto;
-    width: 300px;
-    background-color: var(--primary-color);
+
+.review-box {
+    background: var(--primary-color);
+    color: black;
     padding: 20px;
-    border-radius: 20px;
+    border-radius: 10px;
+    width: 300px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 255, 0, 0.2);
 }
+
 .review-box img {
-    width: auto;
-height: 40px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.center-button {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.center-button button {
+    background: var(--primary-color);
+    color: black;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.center-button button:hover {
+    background: var(--button-hover);
+    color: white;
+}
+
+.footer {
+    background: var(--gradient-bg);
+    padding: 40px;
+    color: var(--text-color);
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.footer-content ul {
+    list-style: none;
+}
+
+.footer-content ul li a {
+    text-decoration: none;
+    color: var(--text-color);
+    transition: color 0.3s ease;
+}
+
+.footer-content ul li a:hover {
+    color: var(--primary-color);
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.social-media img {
+    width: 40px;
+    height: 40px;
+    margin: 0 10px;
 }
