@@ -209,57 +209,136 @@ body {
     height: auto;
     margin-bottom: 10px;
 }
+/* Reviews Section */
 .reviews {
     background: var(--background-color);
     padding: 40px;
+    margin-top: 40px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 255, 0, 0.2);
 }
 
 .reviews h2 {
     text-align: center;
-    margin-bottom: 20px;
     color: var(--text-color);
+    font-size: 2rem;
+    margin-bottom: 30px;
 }
 
-.reviews-container {
+#reviewsContainer {
     display: flex;
-    justify-content: center;
-    gap: 20px;
     flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 30px;
 }
 
-.review-box {
+#reviewsContainer div {
     background: var(--primary-color);
     color: black;
     padding: 20px;
     border-radius: 10px;
-    width: 300px;
+    width: 250px;
+    box-shadow: 0 5px 15px rgba(0, 255, 0, 0.2);
+}
+
+#reviewsContainer p {
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+#openModalButton {
+    background: var(--primary-color);
+    color: black;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    display: block;
+    margin: 20px auto;
+    transition: background 0.3s ease;
+}
+
+#openModalButton:hover {
+    background: var(--button-hover);
+    color: white;
+}
+
+/* Modal Styling */
+#reviewModal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+#reviewModal > div {
+    background: var(--background-color);
+    padding: 30px;
+    border-radius: 10px;
+    width: 400px;
     text-align: center;
     box-shadow: 0 5px 15px rgba(0, 255, 0, 0.2);
 }
 
-.review-box img {
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    margin-bottom: 10px;
+#reviewModal h3 {
+    color: var(--text-color);
+    margin-bottom: 20px;
 }
 
-.center-button {
-    text-align: center;
-    margin-top: 20px;
+#closeModal {
+    font-size: 30px;
+    color: var(--text-color);
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    cursor: pointer;
+    transition: color 0.3s ease;
 }
 
-.center-button button {
+#closeModal:hover {
+    color: var(--secondary-color);
+}
+
+#reviewForm {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+#reviewForm label {
+    text-align: left;
+    color: var(--text-color);
+    font-size: 1rem;
+}
+
+#reviewForm input, #reviewForm textarea {
+    padding: 10px;
+    border: 1px solid var(--primary-color);
+    border-radius: 5px;
+    background: var(--background-color);
+    color: var(--text-color);
+    font-size: 1rem;
+}
+
+#reviewForm button {
     background: var(--primary-color);
     color: black;
-    padding: 10px 20px;
+    padding: 12px 20px;
     border: none;
-    border-radius: 20px;
+    border-radius: 5px;
     font-weight: bold;
     cursor: pointer;
+    transition: background 0.3s ease;
 }
 
-.center-button button:hover {
+#reviewForm button:hover {
     background: var(--button-hover);
     color: white;
 }
