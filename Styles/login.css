@@ -1,0 +1,119 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #1f1c2c, #928dab);
+    color: white;
+}
+
+.glass-container {
+    width: 350px;
+    padding: 30px;
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.37);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+}
+
+input {
+    padding: 12px;
+    margin: 15px 0;
+    border: none;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: white;
+    font-size: 14px;
+    transition: all 0.3s ease-in-out;
+}
+
+input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+input:focus {
+    outline: none;
+    background: rgba(255, 255, 255, 0.3);
+    border-color: rgba(255, 255, 255, 0.7);
+    transform: scale(1.03);
+}
+
+.options {
+    display: flex;
+    align-items: center; 
+    font-size: 12px;
+    color: white;
+    gap: 8px;
+}
+
+.options input {
+    margin: 0;
+}
+
+.options label {
+    display: flex;
+    align-items: center;
+}
+
+.options a {
+    text-decoration: none;
+    color: #00c6ff;
+    transition: color 0.3s;
+}
+
+.options a:hover {
+    color: #84fab0;
+}
+
+button {
+    padding: 12px;
+    margin-top: 20px;
+    border: none;
+    border-radius: 8px;
+    background: linear-gradient(90deg, #00c6ff, #0072ff);
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+button:hover {
+    background: linear-gradient(90deg, #0072ff, #00c6ff);
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(0, 198, 255, 0.3);
+}
+
+p {
+    text-align: center;
+    font-size: 12px;
+    margin-top: 10px;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+p a {
+    text-decoration: none;
+    color: #84e6fa;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+p a:hover {
+    color: #00c6ff;
+}
