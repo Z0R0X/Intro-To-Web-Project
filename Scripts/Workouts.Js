@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
     let selectedMuscle = null;
     let workouts = [];
 
-    fetch('/Scripts/Workouts.json')
+    fetch("./Scripts/workouts.json")
         .then(response => {
             if (!response.ok) {
                 throw new Error('Failed to load workouts data.');

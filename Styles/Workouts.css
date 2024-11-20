@@ -12,7 +12,7 @@ body {
   font-family: 'Poppins', sans-serif;
   margin: 0;
   padding: 0;
-  background: url(/Images/Workouts/background.jpg) no-repeat center center/cover;
+  background: url("../Images/Workouts/background.jpg") no-repeat center center/cover;
   background-attachment: fixed; 
   color: var(--text-color);
   overflow-x: hidden;
