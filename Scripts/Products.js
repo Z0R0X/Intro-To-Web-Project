@@ -65,4 +65,26 @@ function loadProducts()
   .catch(error => console.error('Error loading JSON:', error));
 }
 
+function filterProducts(searchTerm) {
+    searchTerm = searchTerm.toLowerCase();
+    $(".item").each(function () {
+        const productName = $(this).find("h4").text().toLowerCase();
+        if (productName.includes(searchTerm)) {
+            $(this).show();
+        } else {
+            $(this).hide();
+        }
+    });
+}
+
+$(document).ready(function () {
+    $("#search-bar").on("input", function () {
+        const searchTerm = $(this).val();
+        filterProducts(searchTerm);
+    });
+
+    loadProducts();
+});
+
+
 $(document).ready(loadProducts);

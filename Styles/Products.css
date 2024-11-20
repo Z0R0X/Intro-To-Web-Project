@@ -16,7 +16,7 @@
 }
 header
 {
-    background-image: url("/Images/Products/background.jpg");
+    background-image: url("../Images/Products/background.jpg");
     background-size: cover;
     height: 900px;
 }
@@ -38,6 +38,25 @@ header
 {
     color: var(--primary-color);
 }
+.search-container {
+    margin: 20px;
+    text-align: center;
+}
+
+#search-bar {
+    width: 50%;
+    padding: 10px;
+    font-size: 1.2rem;
+    border: 2px solid var(--primary-color);
+    border-radius: 5px;
+    outline: none;
+    transition: box-shadow 0.3s ease;
+}
+
+#search-bar:focus {
+    box-shadow: 0 0 10px var(--primary-color);
+}
+
 main
 {
     background-color: var(--primary-color);
