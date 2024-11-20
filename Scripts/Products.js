@@ -86,5 +86,3 @@ $(document).ready(function () {
     loadProducts();
 });
 
-
-$(document).ready(loadProducts);

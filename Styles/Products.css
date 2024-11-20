@@ -39,7 +39,6 @@ header
     color: var(--primary-color);
 }
 .search-container {
-    margin: 20px;
     text-align: center;
 }
 
@@ -48,7 +47,7 @@ header
     padding: 10px;
     font-size: 1.2rem;
     border: 2px solid var(--primary-color);
-    border-radius: 5px;
+    border-radius: 50px;
     outline: none;
     transition: box-shadow 0.3s ease;
 }
@@ -60,6 +59,7 @@ header
 main
 {
     background-color: var(--primary-color);
+    padding-top: 20px;
 }
 #links
 {

@@ -3,16 +3,14 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Products</title>
+        <title>Document</title>
         <link rel="stylesheet" href="Styles/Common.css" />
-        <link rel="stylesheet" href="Styles/Products.css" />
-        <script src="Scripts/jquery-3.7.1.min.js"></script>
-        <script src="Scripts/Products.js" refer></script>
+        <link rel="stylesheet" href="Styles/Cart.css" />
     </head>
     <body>
         <header>
             <nav class="header-container">
-                <img src="./Images/Workouts/Logo.jpg" alt="" class="Logo" />
+                <img src="Images/Workouts/Logo.jpg" alt="" class="Logo" />
                 <ul class="navigation-menu">
                     <li><a href="index.html">Home</a></li>
                     <li><a href="Workouts.html">Workouts</a></li>
@@ -24,27 +22,31 @@
                     <a href="login.html" class="login-button">Login</a>
                 </div>
             </nav>
-
-            <div id="hero">
-                <p>
-                    <b>
-                        "<span>FUEL</span> Your Fitness: <br />
-                        Premier Protein <br />
-                        Supplements Await."
-                    </b>
-                </p>
-            </div>
         </header>
         <main>
-            <div class="search-container">
-                <input
-                    type="text"
-                    id="search-bar"
-                    placeholder="Find the perfect workout gear"
-                />
+            <h1>Cart</h1>
+            <div id="itemParent">
+                <section class="cartItem">
+                    <img src="Images/Products/storeitem.png" alt="" />
+                    <section>
+                        <h2>Name</h2>
+                        <p class="name">Orange Ulti Preworkout</p>
+                    </section>
+                    <div>
+                        <h2>Quantity</h2>
+                        <button class="subtract">-</button>
+                        <span class="quantity">1</span>
+                        <button class="add">+</button>
+                    </div>
+                    <div>
+                        <h2>Price</h2>
+                        <span class="price">45</span>$
+                    </div>
+                    <button>REMOVE</button>
+                </section>
             </div>
-            <div id="links"></div>
         </main>
+
         <footer class="footer">
             <div class="footer-content">
                 <div class="support">
@@ -55,7 +57,6 @@
                         <li><a href="#">About Us</a></li>
                     </ul>
                 </div>
-
                 <div class="customer-service">
                     <h2>Customer Service</h2>
                     <ul>
