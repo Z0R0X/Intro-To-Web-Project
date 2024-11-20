@@ -1,52 +1,47 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const calculateButton = document.querySelector('.nutrition-advice button');
+    let calculateButton = document.querySelector('.nutrition-advice button');
 
     calculateButton.addEventListener('click', () => {
-        const age = parseInt(document.getElementById('age').value, 10);
-        const gender = document.getElementById('gender').value;
-        const height = parseFloat(document.getElementById('height').value);
-        const weight = parseFloat(document.getElementById('weight').value);
-        const activity = document.getElementById('activity').value;
+        let age = parseInt(document.getElementById('age').value);
+        let gender = document.getElementById('gender').value;
+        let height = parseFloat(document.getElementById('height').value);
+        let weight = parseFloat(document.getElementById('weight').value);
+        let activity = document.getElementById('activity').value;
+        let resultDisplay = document.getElementById('result');
 
         if (isNaN(age) || isNaN(height) || isNaN(weight)) {
-            alert("Please enter valid numbers for age, height, and weight.");
+            resultDisplay.innerText = "Please enter valid numbers for age, height, and weight.";
             return;
         }
 
         let bmr;
-
-        if (gender.toLowerCase() === "male") {
+        if (gender === "male") {
             bmr = 88.36 + (13.4 * weight) + (4.8 * height) - (5.7 * age);
-        } else if (gender.toLowerCase() === "female") {
+        } else if (gender === "female") {
             bmr = 447.6 + (9.2 * weight) + (3.1 * height) - (4.3 * age);
         } else {
-            alert("Please enter 'male' or 'female' for gender.");
+            resultDisplay.innerText = "Please select a valid gender.";
             return;
         }
 
-        let activityMultiplier = 1.2; 
-        switch (activity.toLowerCase()) {
-            case 'sedentary':
-                activityMultiplier = 1.2;
-                break;
-            case 'light':
-                activityMultiplier = 1.375;
-                break;
-            case 'moderate':
-                activityMultiplier = 1.55;
-                break;
-            case 'active':
-                activityMultiplier = 1.725;
-                break;
-            case 'very active':
-                activityMultiplier = 1.9;
-                break;
-            default:
-                alert("Enter activity level as sedentary, light, moderate, active, or very active.");
-                return;
+        let activityMultiplier = 1.2;
+
+        if (activity === 'sedentary') {
+            activityMultiplier = 1.2;
+        } else if (activity === 'light') {
+            activityMultiplier = 1.375;
+        } else if (activity === 'moderate') {
+            activityMultiplier = 1.55;
+        } else if (activity === 'active') {
+            activityMultiplier = 1.725;
+        } else if ( activity === 'very active') {
+            activityMultiplier = 1.9;
+        } else {
+            resultDisplay.innerText = "Please select a valid activity level.";
+            return;
         }
 
-        const dailyCalories = bmr * activityMultiplier;
-        alert(`Estimated daily calories needed: ${dailyCalories.toFixed(2)}`);
+        let dailyCalories = bmr * activityMultiplier;
+        resultDisplay.innerText = `Your estimated daily caloric needs are ${Math.round(dailyCalories)} calories.`;
     });
 });
