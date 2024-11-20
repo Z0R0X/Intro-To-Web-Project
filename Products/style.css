@@ -1,6 +1,6 @@
 :root
 {
-    --green: #a5dd0f;
+    --green: #00ff00;
 }
 *
 {
@@ -93,7 +93,7 @@ hr
 }
 .item
 {
-    width: 300px;
+    width: 400px;
     border: solid 10px;
     border-radius: 20px;
 }
