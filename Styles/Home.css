@@ -168,7 +168,9 @@ body {
     background: var(--button-hover);
     color: white;
 }
-
+#result{
+    color:white;
+}
 .exclusive-services {
     background: var(--background-color);
     padding: 40px;
