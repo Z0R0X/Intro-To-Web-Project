@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Styles/Common.css">
+    <link rel="stylesheet" href="Styles/Calculator.css">
+    <script src="Scripts/Calculator.js" defer></script>
+    <title>Macros Calculator</title>
+</head>
+<body>
+    <header>
+        <nav class="header-container">
+            <img src="Images/Workouts/Logo.jpg" alt="Logo" class="Logo" />
+            <ul class="navigation-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="Workouts.html">Workouts</a></li>
+                <li><a href="Calculator.html">Macros Calculator</a></li>
+                <li><a href="Products.html">Shop</a></li>
+                <li><a href="About-Us.html">About Us</a></li>
+            </ul>
+            <div class="login-section">
+                <a href="login.html" class="login-button">Login</a>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section class="calculator-section">
+            <h1 class="title">Macros Calculator</h1>
+            <form id="macros-form" class="macros-form">
+                <div class="input-group">
+                    <label for="food-name">Food Item</label>
+                    <div class="dropdown">
+                        <input type="text" id="food-name" placeholder="e.g., Chicken Breast" autocomplete="off" required>
+                        <ul id="food-list" class="dropdown-list">
+                            <!-- Dynamically populated list items -->
+                        </ul>
+                    </div>
+                </div>
+                <div class="input-group">
+                    <label for="grams">Grams Consumed</label>
+                    <input type="number" id="grams" placeholder="e.g., 100" required>
+                </div>
+                <button type="button" id="add-food" class="add-button">Add Food</button>
+            </form>
+            <table class="macros-table">
+                <thead>
+                    <tr>
+                        <th>Food</th>
+                        <th>Grams</th>
+                        <th>Proteins</th>
+                        <th>Carbs</th>
+                        <th>Fats</th>
+                        <th>Calories</th>
+                    </tr>
+                </thead>
+                <tbody id="macros-body">
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="2">Total</td>
+                        <td id="total-proteins">0g</td>
+                        <td id="total-carbs">0g</td>
+                        <td id="total-fats">0g</td>
+                        <td id="total-calories">0</td>
+                    </tr>
+                </tfoot>
+            </table>
+        </section>
+    </main>
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="support">
+                <h2>Support</h2>
+                <ul>
+                    <li><a href="mailto: support@trainandthrive.com">Help Center</a></li>
+                    <li><a href="About-Us.html">About Us</a></li>
+                </ul>
+            </div>
+            <div class="customer-service">
+                <h2>Customer Service</h2>
+                <ul>
+                    <li><a href="Cart.html">Track Your Order</a></li>
+                    <li><a href="Products.html#gift-certificate">Gift Certificates</a></li>
+                </ul>
+            </div>
+            <div class="contact-us">
+                <h2>Contact Us</h2>
+                <ul>
+                    <li><a href="tel:+96181932062">Call: +961 81 932 062</a></li>
+                    <li>
+                        <a href="mailto:Train&Thrive@outlook.com">Email: Train&Thrive@outlook.com</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <h3>Follow Us</h3>
+            <div class="social-media">
+                <a href="https://www.facebook.com/trainandthrive" target="_blank">
+                    <img src="Images/Workouts/facebook.png" alt="Facebook" /></a>
+
+                <a href="https://wa.me/81932062" target="_blank"><img src="Images/Workouts/whatsapp.png" alt="WhatsApp" /></a>
+
+                <a href="https://www.instagram.com/trainandthrive" target="_blank">
+                    <img src="Images/Workouts/instagram.png" alt="Instagram" /></a>
+
+            </div>
+            <p>&copy; 2024 Train & Thrive. All Rights Reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

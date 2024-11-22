@@ -1,0 +1,156 @@
+:root {
+    --primary-color: #00ff00;
+    --secondary-color: #ff5722;
+    --background-color: #000000;
+    --text-color: #ffffff;
+    --button-hover: #1e1e1e;
+    --gradient-bg: linear-gradient(135deg, #1e1e1e, #000000);
+    --box-shadow-hover: 0 10px 20px rgba(0, 255, 0, 0.6);
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+header
+{
+    background-image: url("../Images/Calculator/Nutrition.jpg");
+    background-repeat: no-repeat;
+    background-position: center ;
+    background-size: cover;
+    background-attachment: fixed;
+    height: 700px;
+}
+
+.calculator-section {
+    max-width: 900px;
+    margin: 50px auto;
+    padding: 20px;
+    background: var(--gradient-bg);
+    color: var(--text-color);
+    border-radius: 10px;
+    box-shadow: var(--box-shadow-hover);
+    text-align: center;
+}
+
+.calculator-section .title {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: var(--primary-color);
+}
+
+.macros-form {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 30px;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 10px 0;
+}
+
+.input-group label {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+    color: var(--secondary-color);
+}
+
+.input-group input {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    width: 200px;
+    font-size: 1rem;
+}
+
+.add-button {
+    padding: 10px 20px;
+    background-color: var(--primary-color);
+    color: var(--background-color);
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.add-button:hover {
+    transform: scale(1.1);
+}
+
+.macros-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+.macros-table th,
+.macros-table td {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid var(--primary-color);
+}
+
+.macros-table th {
+    background-color: var(--primary-color);
+    color: var(--background-color);
+}
+
+.macros-table tfoot td {
+    font-weight: bold;
+    color: var(--secondary-color);
+}
+
+/* Dropdown Styles */
+.dropdown {
+    position: relative;
+    width: 200px;
+}
+
+.dropdown input {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.dropdown-list {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    max-height: 200px;
+    overflow-y: auto;
+    background-color: var(--background-color);
+    border: 1px solid var(--primary-color);
+    border-radius: 0 0 5px 5px;
+    z-index: 1000;
+    display: none; /* Hidden by default */
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.dropdown-list li {
+    padding: 10px;
+    cursor: pointer;
+    color: var(--text-color);
+}
+
+.dropdown-list li:hover {
+    background-color: var(--button-hover);
+}
+
+/* Show the dropdown list when the dropdown is active */
+.dropdown.active .dropdown-list {
+    display: block;
+}
