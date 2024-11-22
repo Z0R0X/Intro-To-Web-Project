@@ -45,3 +45,39 @@ document.addEventListener('DOMContentLoaded', () => {
         resultDisplay.innerText = `Your estimated daily caloric needs are ${Math.round(dailyCalories)} calories.`;
     });
 });
+document.addEventListener("DOMContentLoaded", () => {
+    const openModalButton = document.getElementById("openModalButton");
+    const reviewModal = document.getElementById("reviewModal");
+    const closeModal = document.getElementById("closeModal");
+    const reviewForm = document.getElementById("reviewForm");
+    const reviewsContainer = document.getElementById("reviewsContainer");
+
+    // Show the modal
+    openModalButton.addEventListener("click", () => {
+        reviewModal.style.display = "block";
+    });
+
+    // Hide the modal
+    closeModal.addEventListener("click", () => {
+        reviewModal.style.display = "none";
+    });
+
+    // Add the review
+    reviewForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+
+        const name = document.getElementById("reviewName").value;
+        const review = document.getElementById("reviewText").value;
+
+        // Create a new review element
+        const newReview = document.createElement("div");
+        newReview.innerHTML = `<p><strong>${name}:</strong> ${review}</p>`;
+
+        // Add the review to the reviews container
+        reviewsContainer.appendChild(newReview);
+
+        // Clear the form and close the modal
+        reviewForm.reset();
+        reviewModal.style.display = "none";
+    });
+});
