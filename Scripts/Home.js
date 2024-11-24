@@ -45,38 +45,61 @@ document.addEventListener('DOMContentLoaded', () => {
         resultDisplay.innerText = `Your estimated daily caloric needs are ${Math.round(dailyCalories)} calories.`;
     });
 });
+
 document.addEventListener("DOMContentLoaded", () => {
-    const openModalButton = document.getElementById("openModalButton");
-    const reviewModal = document.getElementById("reviewModal");
-    const closeModal = document.getElementById("closeModal");
-    const reviewForm = document.getElementById("reviewForm");
-    const reviewsContainer = document.getElementById("reviewsContainer");
+    let openModalButton = document.getElementById("openModalButton");
+    let reviewModal = document.getElementById("reviewModal");
+    let closeModal = document.getElementById("closeModal");
+    let reviewForm = document.getElementById("reviewForm");
+    let reviewsContainer = document.getElementById("reviewsContainer");
+   
+    let reviews = [];
+    fetch('Scripts/Home.json')
+        .then(response => {
+            console.log("Response:", response); 
+            if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+            return response.json();
+        })
+        .then(data => {
+            console.log("Fetched Data:", data);  
+            reviews = data.Reviewsdata || [];
+            displayRandomReviews(reviews);
+        })
+        .catch(error => console.error('Error fetching reviews:', error));
 
-    // Show the modal
+    function displayRandomReviews(reviews) {
+        console.log("Displaying Random Reviews:", reviews); 
+        reviewsContainer.innerHTML = "";  
+        const randomReviews = reviews.sort(() => 0.5 - Math.random()).slice(0, 3);
+        randomReviews.forEach(review => {
+            let reviewElement = document.createElement("div");
+            reviewElement.classList.add("review");  
+            reviewElement.innerHTML = `<p><b>${review.name}:</b> ${review.description}</p>`;
+            reviewsContainer.appendChild(reviewElement);
+        });
+    }
+
     openModalButton.addEventListener("click", () => {
-        reviewModal.style.display = "block";
+        reviewModal.style.display = "flex";
     });
-
-    // Hide the modal
+   
     closeModal.addEventListener("click", () => {
         reviewModal.style.display = "none";
     });
 
-    // Add the review
     reviewForm.addEventListener("submit", (e) => {
         e.preventDefault();
+        let name = document.getElementById("reviewName").value;
+        let review = document.getElementById("reviewText").value;
+        
+        if (!name || !reviewText) {
+            alert("Both fields are required!");
+            return;
+        }
 
-        const name = document.getElementById("reviewName").value;
-        const review = document.getElementById("reviewText").value;
-
-        // Create a new review element
         const newReview = document.createElement("div");
-        newReview.innerHTML = `<p><strong>${name}:</strong> ${review}</p>`;
-
-        // Add the review to the reviews container
+        newReview.innerHTML = `<p><b>${name}:</b> ${review}</p>`;
         reviewsContainer.appendChild(newReview);
-
-        // Clear the form and close the modal
         reviewForm.reset();
         reviewModal.style.display = "none";
     });
