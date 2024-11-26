@@ -157,12 +157,15 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
-    // Helper function to create and return a review element
+    // Helper function to create and return a review element with the image
     function createReviewElement(review) {
         let reviewElement = document.createElement("div");
         reviewElement.classList.add("review");
+
+        // Add image and review content
         reviewElement.innerHTML = `
-            <p><b>${review.name}:</b> ${review.description}</p>
+                <img src="Images/Home page/profile.png" alt="profile" class="review-image"><b class=name>${review.name}</b>
+                <p> ${review.description}</p>
         `;
         return reviewElement;
     }
@@ -216,3 +219,4 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 });
+
