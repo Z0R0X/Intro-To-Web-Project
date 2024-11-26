@@ -1,19 +1,9 @@
-{"Reviewsdata": [
-        {
-            "name": "Mahmoud Sidawi",
-            "description": "Excellent product! Fast shipping and great quality."
-        },
-        {
-            "name": "Ahmad Youssef",
-            "description": "Good service, the product exceeded my expectations."
-        },
-        {
-            "name": "Siraj Mahmmad",
-            "description": "Great quality, but I would like more variety."
-        },
-        {
-            "name": "Siraj jeep",
-            "description": "Great quality, but I would like more variety."
-        }
+{
+    "Reviewsdata": [
+        { "name": "Alice", "description": "Great experience, highly recommend!" },
+        { "name": "Bob", "description": "The service was fantastic!" },
+        { "name": "Charlie", "description": "I loved the environment and staff!" },
+        { "name": "Diana", "description": "Affordable and worth every penny!" },
+        { "name": "Eve", "description": "An unforgettable experience!" }
     ]
 }
