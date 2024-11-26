@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,67 +9,73 @@
     <script src="Scripts/Calculator.js" defer></script>
     <title>Macros Calculator</title>
 </head>
+
 <body>
-    <header>
-        <nav class="header-container">
-            <img src="Images/Workouts/Logo.jpg" alt="Logo" class="Logo" />
-            <ul class="navigation-menu">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="Workouts.html">Workouts</a></li>
-                <li><a href="Calculator.html">Macros Calculator</a></li>
-                <li><a href="Products.html">Shop</a></li>
-                <li><a href="About-Us.html">About Us</a></li>
-            </ul>
-            <div class="login-section">
-                <a href="login.html" class="login-button">Login</a>
-            </div>
-        </nav>
-    </header>
-    <main>
-        <section class="calculator-section">
-            <h1 class="title">Macros Calculator</h1>
-            <form id="macros-form" class="macros-form">
-                <div class="input-group">
-                    <label for="food-name">Food Item</label>
-                    <div class="dropdown">
-                        <input type="text" id="food-name" placeholder="e.g., Chicken Breast" autocomplete="off" required>
-                        <ul id="food-list" class="dropdown-list">
-                            <!-- Dynamically populated list items -->
-                        </ul>
+    <div id="Back">
+        <header>
+            <nav class="header-container">
+                <img src="Images/Workouts/Logo.jpg" alt="Logo" class="Logo" />
+                <ul class="navigation-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="Workouts.html">Workouts</a></li>
+                    <li><a href="Calculator.html">Macros Calculator</a></li>
+                    <li><a href="Products.html">Shop</a></li>
+                    <li><a href="About-Us.html">About Us</a></li>
+                </ul>
+                <div class="login-section">
+                    <a href="login.html" class="login-button">Login</a>
+                </div>
+            </nav>
+        </header>
+        <main>
+            <section class="calculator-section">
+                <h1 class="title">Macros Calculator</h1>
+                <form id="macros-form" class="macros-form">
+                    <div class="input-group">
+                        <label for="food-name">Food Item</label>
+                        <div style="position: relative; width: 100%;">
+                            <input type="text" id="food-name" placeholder="Search for food..." class="styled-search-bar" autocomplete="off" />
+                            <ul id="food-suggestions" class="food-suggestions"></ul>
+                        </div>
                     </div>
-                </div>
-                <div class="input-group">
-                    <label for="grams">Grams Consumed</label>
-                    <input type="number" id="grams" placeholder="e.g., 100" required>
-                </div>
-                <button type="button" id="add-food" class="add-button">Add Food</button>
-            </form>
-            <table class="macros-table">
-                <thead>
-                    <tr>
-                        <th>Food</th>
-                        <th>Grams</th>
-                        <th>Proteins</th>
-                        <th>Carbs</th>
-                        <th>Fats</th>
-                        <th>Calories</th>
-                    </tr>
-                </thead>
-                <tbody id="macros-body">
-                </tbody>
-                <tfoot>
-                    <tr>
-                        <td colspan="2">Total</td>
-                        <td id="total-proteins">0g</td>
-                        <td id="total-carbs">0g</td>
-                        <td id="total-fats">0g</td>
-                        <td id="total-calories">0</td>
-                    </tr>
-                </tfoot>
-            </table>
-        </section>
-    </main>
+
+                    <div class="input-group">
+                        <label for="grams">Grams Consumed</label>
+                        <input type="number" id="grams" placeholder="e.g., 100" required>
+                    </div>
+                    <div class="button-group">
+                        <button type="button" id="add-food" class="action-button">Add Food</button>
+                        <button type="button" id="reset-table" class="action-button">Reset Table</button>
+                    </div>
+                </form>
+                <table class="macros-table">
+                    <thead>
+                        <tr>
+                            <th>Food</th>
+                            <th>Grams</th>
+                            <th>Proteins</th>
+                            <th>Carbs</th>
+                            <th>Fats</th>
+                            <th>Calories</th>
+                        </tr>
+                    </thead>
+                    <tbody id="macros-body">
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="2">Total</td>
+                            <td id="total-proteins">0g</td>
+                            <td id="total-carbs">0g</td>
+                            <td id="total-fats">0g</td>
+                            <td id="total-calories">0</td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </section>
+        </main>
+    </div>
     <footer class="footer">
+        <!-- Footer content (unchanged) -->
         <div class="footer-content">
             <div class="support">
                 <h2>Support</h2>
@@ -99,15 +106,13 @@
             <div class="social-media">
                 <a href="https://www.facebook.com/trainandthrive" target="_blank">
                     <img src="Images/Workouts/facebook.png" alt="Facebook" /></a>
-
                 <a href="https://wa.me/81932062" target="_blank"><img src="Images/Workouts/whatsapp.png" alt="WhatsApp" /></a>
-
                 <a href="https://www.instagram.com/trainandthrive" target="_blank">
                     <img src="Images/Workouts/instagram.png" alt="Instagram" /></a>
-
             </div>
             <p>&copy; 2024 Train & Thrive. All Rights Reserved.</p>
         </div>
     </footer>
 </body>
+
 </html>

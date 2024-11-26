@@ -8,25 +8,25 @@
     --box-shadow-hover: 0 10px 20px rgba(0, 255, 0, 0.6);
 }
 
-*{
-    margin:0;
-    padding:0;
+* {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
     scroll-behavior: smooth;
 }
-
-header
+#Back
 {
-    background-image: url("../Images/Calculator/Nutrition.jpg");
+    background-image: url("../Images/Calculator/Background.png");
     background-repeat: no-repeat;
     background-position: center ;
     background-size: cover;
     background-attachment: fixed;
-    height: 700px;
+    height: auto;
 }
 
 .calculator-section {
-    max-width: 900px;
+    width: 70%;
+    height: auto;
     margin: 50px auto;
     padding: 20px;
     background: var(--gradient-bg);
@@ -34,6 +34,7 @@ header
     border-radius: 10px;
     box-shadow: var(--box-shadow-hover);
     text-align: center;
+    animation: fadeIn 1s ease-in-out;
 }
 
 .calculator-section .title {
@@ -48,6 +49,7 @@ header
     margin-bottom: 30px;
     gap: 15px;
     flex-wrap: wrap;
+    animation: slideInUp 1s ease-out;
 }
 
 .input-group {
@@ -61,6 +63,7 @@ header
     font-size: 1.2rem;
     margin-bottom: 5px;
     color: var(--secondary-color);
+    animation: bounceIn 0.5s;
 }
 
 .input-group input {
@@ -69,27 +72,47 @@ header
     border-radius: 5px;
     width: 200px;
     font-size: 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--text-color);
+    transition: all 0.3s ease;
 }
 
-.add-button {
+.input-group input:hover,
+.input-group input:focus {
+    transform: scale(1.05);
+    box-shadow: var(--box-shadow-hover);
+}
+
+.action-button {
     padding: 10px 20px;
     background-color: var(--primary-color);
     color: var(--background-color);
     border: none;
     border-radius: 5px;
-    font-size: 1.2rem;
+    font-size: 1rem;
     cursor: pointer;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, background-color 0.3s;
+    height: 50px; /* Fixed height */
+    width: 150px; /* Optional: consistent width */
 }
 
-.add-button:hover {
+.action-button:hover {
     transform: scale(1.1);
+    background-color: var(--secondary-color);
+}
+
+.button-group {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 20px;
 }
 
 .macros-table {
     width: 100%;
     border-collapse: collapse;
     margin: 20px 0;
+    animation: zoomIn 0.8s;
 }
 
 .macros-table th,
@@ -109,48 +132,93 @@ header
     color: var(--secondary-color);
 }
 
-/* Dropdown Styles */
-.dropdown {
-    position: relative;
-    width: 200px;
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
-.dropdown input {
-    width: 100%;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    font-size: 1rem;
-}
-
-.dropdown-list {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    max-height: 200px;
-    overflow-y: auto;
-    background-color: var(--background-color);
-    border: 1px solid var(--primary-color);
-    border-radius: 0 0 5px 5px;
-    z-index: 1000;
-    display: none; /* Hidden by default */
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.dropdown-list li {
-    padding: 10px;
-    cursor: pointer;
+.food-suggestions {
+    max-height: 150px; /* Limit height */
+    overflow-y: auto; /* Enable vertical scrolling */
+    background: rgba(0, 0, 0, 0.8); /* Match the theme */
     color: var(--text-color);
+    border: 1px solid var(--primary-color);
+    border-radius: 5px;
+    list-style-type: none;
+    padding: 10px;
+    margin: 5px 0 0;
 }
 
-.dropdown-list li:hover {
-    background-color: var(--button-hover);
+.food-suggestions li {
+    padding: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
 }
 
-/* Show the dropdown list when the dropdown is active */
-.dropdown.active .dropdown-list {
-    display: block;
+.food-suggestions li:hover {
+    background-color: var(--primary-color);
+    color: var(--background-color);
 }
+
+
+@keyframes slideInUp {
+    from {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes zoomIn {
+    from {
+        transform: scale(0.9);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes bounceIn {
+    from {
+        transform: scale(0.9);
+    }
+    to {
+        transform: scale(1.05);
+    }
+}
+
+
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .calculator-section {
+        margin: 20px auto;
+        padding: 15px;
+    }
+
+    .macros-form {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .input-group input {
+        width: 100%;
+    }
+
+    .macros-table th,
+    .macros-table td {
+        font-size: 0.8rem;
+    }
+}
+
+
