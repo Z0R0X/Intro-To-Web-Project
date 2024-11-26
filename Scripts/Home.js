@@ -52,55 +52,110 @@ document.addEventListener("DOMContentLoaded", () => {
     let closeModal = document.getElementById("closeModal");
     let reviewForm = document.getElementById("reviewForm");
     let reviewsContainer = document.getElementById("reviewsContainer");
-   
-    let reviews = [];
-    fetch('Scripts/Home.json')
-        .then(response => {
-            console.log("Response:", response); 
-            if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
-            return response.json();
-        })
-        .then(data => {
-            console.log("Fetched Data:", data);  
-            reviews = data.Reviewsdata || [];
-            displayRandomReviews(reviews);
-        })
-        .catch(error => console.error('Error fetching reviews:', error));
+    let resetButton = document.getElementById("resetButton");
 
-    function displayRandomReviews(reviews) {
-        console.log("Displaying Random Reviews:", reviews); 
-        reviewsContainer.innerHTML = "";  
-        const randomReviews = reviews.sort(() => 0.5 - Math.random()).slice(0, 3);
-        randomReviews.forEach(review => {
-            let reviewElement = document.createElement("div");
-            reviewElement.classList.add("review");  
-            reviewElement.innerHTML = `<p><b>${review.name}:</b> ${review.description}</p>`;
-            reviewsContainer.appendChild(reviewElement);
+    let initialReviews = [];
+
+    fetch("Scripts/Home.json")
+        .then(response => response.json())
+        .then(data => {
+            initialReviews = data.Reviewsdata || [];
+            displayReviews();
+        })
+        .catch(error => {
+            console.error("Error fetching JSON data:", error);
+            initialReviews = []; 
+            displayReviews();
         });
+
+    function loadReviewsFromLocalStorage() {
+        let storedReviews = JSON.parse(localStorage.getItem("reviews")) || [];
+        return storedReviews;
+    }
+
+    // Function to save reviews to localStorage
+    function saveReviews(localReviews) {
+        localStorage.setItem("reviews", JSON.stringify(localReviews));
+    }
+
+    function displayReviews() {
+        reviewsContainer.innerHTML = "";
+
+        let localReviews = loadReviewsFromLocalStorage();
+
+        if (localReviews.length > 0) {
+            let firstReview = localReviews[0];
+            reviewsContainer.appendChild(createReviewElement(firstReview));
+
+            let nextReviewsFromJSON = initialReviews.slice(0, 2); 
+            nextReviewsFromJSON.forEach(review => {
+                reviewsContainer.appendChild(createReviewElement(review));
+            });
+        } else {
+            const firstThreeReviews = initialReviews.slice(0, 3);
+            firstThreeReviews.forEach(review => {
+                reviewsContainer.appendChild(createReviewElement(review));
+            });
+        }
+    }
+
+    function createReviewElement(review) {
+        let reviewElement = document.createElement("div");
+        reviewElement.classList.add("review");
+
+        reviewElement.innerHTML = `
+                <img src="Images/Home page/profile.png" alt="profile" class="review-image"><b class=name>${review.name}</b>
+                <p> ${review.description}</p>
+        `;
+        return reviewElement;
     }
 
     openModalButton.addEventListener("click", () => {
         reviewModal.style.display = "flex";
     });
-   
+
     closeModal.addEventListener("click", () => {
         reviewModal.style.display = "none";
     });
 
-    reviewForm.addEventListener("submit", (e) => {
-        e.preventDefault();
+    reviewForm.addEventListener("submit", (prevent) => {
+        prevent.preventDefault(); 
+
         let name = document.getElementById("reviewName").value;
-        let review = document.getElementById("reviewText").value;
-        
+        let reviewText = document.getElementById("reviewText").value;
+
         if (!name || !reviewText) {
             alert("Both fields are required!");
             return;
         }
 
-        const newReview = document.createElement("div");
-        newReview.innerHTML = `<p><b>${name}:</b> ${review}</p>`;
-        reviewsContainer.appendChild(newReview);
-        reviewForm.reset();
-        reviewModal.style.display = "none";
+        let newReview = { name: name, description: reviewText };
+
+        // Load existing reviews from localStorage, add the new one to the front
+        let localReviews = loadReviewsFromLocalStorage();
+        localReviews.unshift(newReview);  // Adds the new review to the top of the array
+
+
+         
+        let maxReviews = 5;
+     if (localReviews.length > maxReviews) {
+        localReviews.pop(); 
+     }
+        saveReviews(localReviews); // Save the updated reviews to localStorage
+
+        // Update the display with the latest reviews
+        displayReviews();
+
+        reviewForm.reset();  // Reset form fields after submission
+        reviewModal.style.display = "none"; 
+    });
+
+    // Reset localStorage (while keeping JSON data intact)
+    resetButton.addEventListener("click", () => {
+        if (confirm("Are you sure you want to reset the reviews?")) {
+            localStorage.removeItem("reviews");
+            displayReviews(); // Display the JSON reviews again
+        }
     });
 });
+

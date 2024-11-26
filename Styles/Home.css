@@ -227,7 +227,15 @@ body {
     font-size: 2rem;
     margin-bottom: 30px;
 }
-
+.name{
+position: relative;
+bottom: 12px;
+left: 10px;
+}
+.review-image {
+    width: 40px; 
+    height: 40px;
+}
 #reviewsContainer {
     display: flex;
     flex-wrap: wrap;

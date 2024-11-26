@@ -14,7 +14,9 @@ body {
     background: linear-gradient(135deg, #1f1c2c, #928dab);
     color: white;
 }
-
+#signup-form{
+display: none;
+}
 .glass-container {
     width: 350px;
     padding: 30px;
