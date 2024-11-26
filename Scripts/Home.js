@@ -46,58 +46,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-/*document.addEventListener("DOMContentLoaded", () => {
-    let openModalButton = document.getElementById("openModalButton");
-    let reviewModal = document.getElementById("reviewModal");
-    let closeModal = document.getElementById("closeModal");
-    let reviewForm = document.getElementById("reviewForm");
-    let reviewsContainer = document.getElementById("reviewsContainer");
-
-    let reviews = JSON.parse(localStorage.getItem("reviews")) || [];
-    displayReviews(reviews);
-
-    function displayReviews(reviews) {
-        reviewsContainer.innerHTML = ""; 
-        reviews.forEach(review => {
-            let reviewElement = document.createElement("div");
-            reviewElement.classList.add("review");
-            reviewElement.innerHTML = `<p><b>${review.name}:</b> ${review.description}</p>`;
-            reviewsContainer.appendChild(reviewElement);
-        });
-    }
-
-    openModalButton.addEventListener("click", () => {
-        reviewModal.style.display = "flex";
-    });
-
-    closeModal.addEventListener("click", () => {
-        reviewModal.style.display = "none";
-    });
-
-    reviewForm.addEventListener("submit", (e) => {
-        e.preventDefault();
-
-        let name = document.getElementById("reviewName").value;
-        let reviewText = document.getElementById("reviewText").value;
-
-        if (!name || !reviewText) {
-            alert("Both fields are required!");
-            return;
-        }
-
-
-        let newReview = { name, description: reviewText };
-        reviews.push(newReview);
-
-        localStorage.setItem("reviews", JSON.stringify(reviews));
-
-        displayReviews(reviews);
-
-        reviewForm.reset();
-        reviewModal.style.display = "none";
-    });
-});
-*/
 document.addEventListener("DOMContentLoaded", () => {
     let openModalButton = document.getElementById("openModalButton");
     let reviewModal = document.getElementById("reviewModal");
@@ -108,22 +56,20 @@ document.addEventListener("DOMContentLoaded", () => {
 
     let initialReviews = [];
 
-    // Fetch reviews from the JSON file
     fetch("Scripts/Home.json")
         .then(response => response.json())
         .then(data => {
             initialReviews = data.Reviewsdata || [];
-            displayReviews(); // Display reviews from localStorage and JSON
+            displayReviews();
         })
         .catch(error => {
             console.error("Error fetching JSON data:", error);
-            initialReviews = [];  // If error, no JSON data available
+            initialReviews = []; 
             displayReviews();
         });
 
-    // Function to load reviews from localStorage
     function loadReviewsFromLocalStorage() {
-        const storedReviews = JSON.parse(localStorage.getItem("reviews")) || [];
+        let storedReviews = JSON.parse(localStorage.getItem("reviews")) || [];
         return storedReviews;
     }
 
@@ -132,24 +78,20 @@ document.addEventListener("DOMContentLoaded", () => {
         localStorage.setItem("reviews", JSON.stringify(localReviews));
     }
 
-    // Display reviews: 1 from localStorage, 2 from JSON file, or 3 from JSON if localStorage is empty
     function displayReviews() {
         reviewsContainer.innerHTML = "";
 
-        const localReviews = loadReviewsFromLocalStorage(); // Get reviews from localStorage
+        let localReviews = loadReviewsFromLocalStorage();
 
-        // If localStorage has reviews, display the first one from there
         if (localReviews.length > 0) {
             let firstReview = localReviews[0];
             reviewsContainer.appendChild(createReviewElement(firstReview));
 
-            // Display the next 2 reviews from JSON (if available)
-            const nextReviewsFromJSON = initialReviews.slice(0, 2); // Get up to 2 reviews from JSON
+            let nextReviewsFromJSON = initialReviews.slice(0, 2); 
             nextReviewsFromJSON.forEach(review => {
                 reviewsContainer.appendChild(createReviewElement(review));
             });
         } else {
-            // If localStorage is empty, show 3 reviews from the JSON file
             const firstThreeReviews = initialReviews.slice(0, 3);
             firstThreeReviews.forEach(review => {
                 reviewsContainer.appendChild(createReviewElement(review));
@@ -157,12 +99,10 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
-    // Helper function to create and return a review element with the image
     function createReviewElement(review) {
         let reviewElement = document.createElement("div");
         reviewElement.classList.add("review");
 
-        // Add image and review content
         reviewElement.innerHTML = `
                 <img src="Images/Home page/profile.png" alt="profile" class="review-image"><b class=name>${review.name}</b>
                 <p> ${review.description}</p>
@@ -178,37 +118,36 @@ document.addEventListener("DOMContentLoaded", () => {
         reviewModal.style.display = "none";
     });
 
-    // Ensure submit button triggers form submission
-    reviewForm.addEventListener("submit", (e) => {
-        e.preventDefault();  // Prevent form from refreshing the page
-
-        console.log("Submit button clicked!"); // Log to confirm the event is triggered
+    reviewForm.addEventListener("submit", (prevent) => {
+        prevent.preventDefault(); 
 
         let name = document.getElementById("reviewName").value;
         let reviewText = document.getElementById("reviewText").value;
 
-        // Log the values to check if they're correct
-        console.log("Name:", name);
-        console.log("Review Text:", reviewText);
-
-        // Check if both fields are filled
         if (!name || !reviewText) {
             alert("Both fields are required!");
             return;
         }
 
-        let newReview = { name, description: reviewText };
+        let newReview = { name: name, description: reviewText };
 
         // Load existing reviews from localStorage, add the new one to the front
         let localReviews = loadReviewsFromLocalStorage();
         localReviews.unshift(newReview);  // Adds the new review to the top of the array
+
+
+         
+        let maxReviews = 5;
+     if (localReviews.length > maxReviews) {
+        localReviews.pop(); 
+     }
         saveReviews(localReviews); // Save the updated reviews to localStorage
 
         // Update the display with the latest reviews
         displayReviews();
 
         reviewForm.reset();  // Reset form fields after submission
-        reviewModal.style.display = "none";  // Close the modal
+        reviewModal.style.display = "none"; 
     });
 
     // Reset localStorage (while keeping JSON data intact)
