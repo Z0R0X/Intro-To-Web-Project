@@ -6,8 +6,7 @@ function addToCart(id) {
     if (existingItem) {
         alert("Item is already in the cart!");
     } else {
-        cart.push(id);
-        alert("Item added to the cart!");
+        cart.push({ id: id, quantity: 1 });
         saveCart();
     }
 }
@@ -83,6 +82,8 @@ $(document).ready(function () {
         filterProducts(searchTerm);
     });
 
+    
+    loadCart();
     loadProducts();
 });
 

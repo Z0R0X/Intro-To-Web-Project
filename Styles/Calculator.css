@@ -14,7 +14,7 @@
     box-sizing: border-box;
     scroll-behavior: smooth;
 }
-#Back
+body
 {
     background-image: url("../Images/Calculator/Background.png");
     background-repeat: no-repeat;
