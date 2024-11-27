@@ -85,5 +85,15 @@ $(document).ready(function () {
     
     loadCart();
     loadProducts();
+    setTimeout(() => {
+        let hash = window.location.hash;
+        if (hash) {
+        let targetElement = document.querySelector(hash);
+        if (targetElement) {
+            targetElement.scrollIntoView({ behavior: "smooth" });
+        }
+        }
+      }, 500);
+    
 });
 
