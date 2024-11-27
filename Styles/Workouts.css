@@ -169,14 +169,3 @@ button:hover {
   line-height: 1.8;
 }
 
-
-@media screen and (max-width: 768px) {
-  body{
-    flex-direction: column;
-    flex-wrap: wrap;
-    padding:10px;
-
-  }
-
-  
-}
