@@ -1,37 +1,48 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const foodInput = document.getElementById("food-name");
-    const foodOptionsContainer = document.getElementById("food-suggestions");
+    let foodInput = document.getElementById("food-name");
+    let gramsInput = document.getElementById("grams");
+    let foodOptionsContainer = document.getElementById("food-suggestions");
+    let errorMessage = document.createElement("div");
+    errorMessage.id = "error-message";
+    document.querySelector(".calculator-section").appendChild(errorMessage);
     let foodData = {};
 
-    // Fetch food data
     async function loadFoodData() {
         try {
             const response = await fetch("Scripts/Calculator.json");
             foodData = await response.json();
-            console.log("Food data loaded:", foodData); // Debugging
+            console.log("Food data loaded:", foodData); 
         } catch (error) {
-            console.error("Error loading food data:", error);
+            displayErrorMessage("Error loading food data. Please try again.");
         }
     }
 
+    loadFoodData();
+
+    function displayErrorMessage(message) {
+        errorMessage.textContent = message;
+        errorMessage.style.display = "block";
+        setTimeout(() => {
+            errorMessage.style.display = "none";
+        }, 3000);
+    }
+
     document.addEventListener("click", (event) => {
-        const suggestionsContainer = document.getElementById("food-suggestions");
+        let suggestionsContainer = document.getElementById("food-suggestions");
         if (!event.target.closest(".input-group")) {
             suggestionsContainer.style.display = "none";
         }
     });
 
-    // Filter foods on input and show suggestions
     foodInput.addEventListener("input", () => {
-        const query = foodInput.value.toLowerCase();
-        const filteredFoods = Object.keys(foodData).filter(food =>
+        let query = foodInput.value.toLowerCase();
+        let filteredFoods = Object.keys(foodData).filter((food) =>
             food.toLowerCase().includes(query)
         );
 
         displayFoodSuggestions(filteredFoods);
     });
 
-    // Display suggestions
     function displayFoodSuggestions(filteredFoods) {
         foodOptionsContainer.innerHTML = "";
 
@@ -40,8 +51,8 @@ document.addEventListener("DOMContentLoaded", () => {
             return;
         }
 
-        filteredFoods.forEach(food => {
-            const listItem = document.createElement("li");
+        filteredFoods.forEach((food) => {
+            let listItem = document.createElement("li");
             listItem.textContent = food;
             listItem.classList.add("suggestion-item");
             listItem.addEventListener("click", () => {
@@ -55,33 +66,35 @@ document.addEventListener("DOMContentLoaded", () => {
         foodOptionsContainer.style.display = "block";
     }
 
-    // Add food to the table
     document.getElementById("add-food").addEventListener("click", () => {
-        const foodName = foodInput.value;
-        const grams = parseFloat(document.getElementById("grams").value);
+        let foodName = foodInput.value;
+        let grams = parseFloat(gramsInput.value);
 
         if (!foodName || isNaN(grams) || grams <= 0) {
-            alert("Please enter valid food and grams.");
+            displayErrorMessage("Please enter a valid food item and grams.");
             return;
         }
 
         const food = foodData[foodName];
         if (food) {
-            const proteins = ((food.protein / 100) * grams).toFixed(2);
-            const carbs = ((food.carbs / 100) * grams).toFixed(2);
-            const fats = ((food.fats / 100) * grams).toFixed(2);
-            const calories = ((food.calories / 100) * grams).toFixed(2);
+            let proteins = ((food.protein / 100) * grams).toFixed(2);
+            let carbs = ((food.carbs / 100) * grams).toFixed(2);
+            let fats = ((food.fats / 100) * grams).toFixed(2);
+            let calories = ((food.calories / 100) * grams).toFixed(2);
 
             addFoodToTable(foodName, grams, proteins, carbs, fats, calories);
             updateTotals(proteins, carbs, fats, calories);
+
+            foodInput.value = "";
+            gramsInput.value = "";
         } else {
-            alert("Food item not found in the database.");
+            displayErrorMessage("Food item not found in the database.");
         }
     });
 
     function addFoodToTable(name, grams, proteins, carbs, fats, calories) {
-        const tableBody = document.getElementById("macros-body");
-        const row = document.createElement("tr");
+        let tableBody = document.getElementById("macros-body");
+        let row = document.createElement("tr");
 
         row.innerHTML = `
             <td>${name}</td>
@@ -90,16 +103,28 @@ document.addEventListener("DOMContentLoaded", () => {
             <td>${carbs}g</td>
             <td>${fats}g</td>
             <td>${calories}</td>
+            <td><button class="remove-row action-button">Remove</button></td>
         `;
+
+        row.querySelector(".remove-row").addEventListener("click", () => {
+            removeFoodFromTable(row, proteins, carbs, fats, calories);
+        });
 
         tableBody.appendChild(row);
     }
 
+    function removeFoodFromTable(row, proteins, carbs, fats, calories) {
+        let tableBody = document.getElementById("macros-body");
+        tableBody.removeChild(row);
+
+        updateTotals(-proteins, -carbs, -fats, -calories);
+    }
+
     function updateTotals(proteins, carbs, fats, calories) {
-        const totalProteins = document.getElementById("total-proteins");
-        const totalCarbs = document.getElementById("total-carbs");
-        const totalFats = document.getElementById("total-fats");
-        const totalCalories = document.getElementById("total-calories");
+        let totalProteins = document.getElementById("total-proteins");
+        let totalCarbs = document.getElementById("total-carbs");
+        let totalFats = document.getElementById("total-fats");
+        let totalCalories = document.getElementById("total-calories");
 
         totalProteins.textContent = `${(
             parseFloat(totalProteins.textContent) + parseFloat(proteins)
@@ -110,20 +135,8 @@ document.addEventListener("DOMContentLoaded", () => {
         totalFats.textContent = `${(
             parseFloat(totalFats.textContent) + parseFloat(fats)
         ).toFixed(2)}g`;
-        totalCalories.textContent = `${(
+        totalCalories.textContent = `${
             parseFloat(totalCalories.textContent) + parseFloat(calories)
-        ).toFixed(2)}`;
+        }`;
     }
-
-    document.getElementById('reset-table').addEventListener('click', () => {
-        document.getElementById('macros-body').innerHTML = ''; // Clear all rows
-        document.getElementById('total-proteins').textContent = '0g';
-        document.getElementById('total-carbs').textContent = '0g';
-        document.getElementById('total-fats').textContent = '0g';
-        document.getElementById('total-calories').textContent = '0';
-    });
-    
-
-    // Initialize
-    loadFoodData();
 });

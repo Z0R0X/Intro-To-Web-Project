@@ -92,9 +92,11 @@ body
     font-size: 1rem;
     cursor: pointer;
     transition: transform 0.3s ease, background-color 0.3s;
-    height: 50px; /* Fixed height */
-    width: 150px; /* Optional: consistent width */
+    height: 50px; 
+    width: 150px; 
 }
+
+
 
 .action-button:hover {
     transform: scale(1.1);
@@ -107,6 +109,34 @@ body
     justify-content: center;
     margin-top: 20px;
 }
+.error-message {
+    color: red;
+    font-weight: bold;
+    font-size: 1rem;
+    margin-top: 10px;
+    display: none; 
+}
+
+#error-message {
+    color: red;
+    background-color: rgba(255, 0, 0, 0.1);
+    padding: 10px;
+    border: 1px solid red;
+    border-radius: 5px;
+    margin: 15px auto;
+    width: 80%;
+    text-align: center;
+    display: none;
+    animation: fadeInOut 3s;
+}
+
+@keyframes fadeInOut {
+    0% { opacity: 0; }
+    20% { opacity: 1; }
+    80% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
 
 .macros-table {
     width: 100%;
@@ -132,7 +162,6 @@ body
     color: var(--secondary-color);
 }
 
-/* Animations */
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -143,9 +172,9 @@ body
 }
 
 .food-suggestions {
-    max-height: 150px; /* Limit height */
-    overflow-y: auto; /* Enable vertical scrolling */
-    background: rgba(0, 0, 0, 0.8); /* Match the theme */
+    max-height: 150px; 
+    overflow-y: auto; 
+    background: rgba(0, 0, 0, 0.8); 
     color: var(--text-color);
     border: 1px solid var(--primary-color);
     border-radius: 5px;
@@ -199,7 +228,7 @@ body
 
 
 
-/* Media Queries */
+
 @media (max-width: 768px) {
     .calculator-section {
         margin: 20px auto;

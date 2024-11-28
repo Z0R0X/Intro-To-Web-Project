@@ -8,18 +8,145 @@
   --box-shadow-hover: 0 10px 20px rgba(0, 255, 0, 0.6);
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
 body {
   font-family: 'Poppins', sans-serif;
   margin: 0;
   padding: 0;
   background-image: url("../Images/Workouts/background.jpg");
   background-repeat: no-repeat;
-  background-position: center ;
+  background-position: center;
   background-size: cover;
-  background-attachment: fixed; 
+  background-attachment: fixed;
   color: var(--text-color);
   overflow-x: hidden;
   scroll-behavior: smooth;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+header {
+  height: auto;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  position: relative;
+  height:300px;
+}
+
+.Logo {
+  height: 50px;
+  width: auto;
+}
+
+.header-container {
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 50px;
+  width: 100%;
+  max-width: 1200px;
+  position: absolute;
+  top: 10px;
+}
+
+.navigation-menu {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+}
+
+.navigation-menu a {
+  color: var(--text-color);
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  background-color: rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease-in-out;
+}
+
+.navigation-menu a:hover {
+  background-color: var(--primary-color);
+  color: var(--background-color);
+  transform: scale(1.1);
+  box-shadow: var(--box-shadow-hover);
+}
+
+.login-button {
+  color: var(--text-color);
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  background-color: rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease-in-out;
+}
+
+.login-button:hover {
+  background-color: var(--primary-color);
+  color: var(--background-color);
+  transform: scale(1.1);
+  box-shadow: var(--box-shadow-hover);
+}
+
+.workout-selection {
+  padding: 60px 20px;
+  background: rgba(0, 0, 0, 0.8);
+  color: var(--text-color);
+  text-align: center;
+  border-radius: 15px;
+  margin: 20px auto;
+  max-width: 90%;
+}
+
+.workout-selection h1 {
+  margin-bottom: 30px;
+  font-size: 3rem;
+  text-transform: uppercase;
+  color: var(--primary-color);
+}
+
+.workout-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+}
+
+.level-select,
+.muscle-select {
+  border: 2px solid var(--primary-color);
+  border-radius: 15px;
+  padding: 40px;
+  width: 100%;
+  max-width: 600px;
+  text-align: center;
+  box-shadow: 0 10px 15px rgba(0, 255, 0, 0.4);
+  transition: transform 0.3s, box-shadow 0.3s;
+  color: var(--text-color);
+}
+
+.level-select:hover,
+.muscle-select:hover {
+  transform: scale(1.1);
+  box-shadow: var(--box-shadow-hover);
+}
+
+#workout-results {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 40px;
+  margin-top: 50px;
+  padding: 20px;
 }
 
 button {
@@ -43,8 +170,8 @@ button:hover {
 }
 
 .reset-button {
-  background-color: var(--secondary-color); 
-  color: var(--background-color); 
+  background-color: var(--secondary-color);
+  color: var(--background-color);
   border: 2px solid var(--secondary-color);
   padding: 15px 30px;
   margin: 10px;
@@ -57,78 +184,9 @@ button:hover {
 
 .reset-button:hover {
   background-color: var(--text-color);
-  color: var(--secondary-color); 
+  color: var(--secondary-color);
   transform: scale(1.1);
   box-shadow: 0 10px 20px rgba(255, 87, 34, 0.6);
-}
-
-.workout-selection {
-  padding: 60px 20px;
-  background: rgba(0, 0, 0, 0.8); 
-  color: var(--text-color);
-  text-align: center;
-  border-radius: 15px;
-  margin: 20px;
-}
-
-.workout-selection h1 {
-  margin-bottom: 30px;
-  font-size: 3rem;
-  text-transform: uppercase;
-  color: var(--primary-color);
-  animation: glow 2s infinite alternate;
-}
-
-.workout-options {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 30px;
-  justify-content: center;
-}
-
-.level-select,.muscle-select {
-  border: 2px solid var(--primary-color);
-  border-radius: 15px;
-  padding: 40px;
-  width: 600px;
-  height: 200px;
-  text-align: center;
-  box-shadow: 0 10px 15px rgba(0, 255, 0, 0.4);
-  transition: transform 0.3s, box-shadow 0.3s;
-  color: var(--text-color);
-}
-
-.level-select:hover,.muscle-select:hover {
-  transform: scale(1.1);
-  box-shadow: var(--box-shadow-hover);
-}
-
-#workout-results {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 40px;
-  margin-top: 50px;
-  padding: 20px;
-}
-
-@keyframes fadeInUp {
-  0% {
-      opacity: 0;
-      transform: translateY(20px);
-  }
-  100% {
-      opacity: 1;
-      transform: translateY(0);
-  }
-}
-
-@keyframes glow {
-  0% {
-      box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
-  }
-  100% {
-      box-shadow: 0 0 20px rgba(0, 255, 0, 0.8);
-  }
 }
 
 .workout-item {
@@ -153,9 +211,7 @@ button:hover {
 .workout-item:hover {
   transform: scale(1.05);
   box-shadow: var(--box-shadow-hover);
-  transform: scale(1.1);
   animation: glow 0.7s infinite alternate;
-  box-shadow: 0 15px 30px rgba(0, 255, 0, 0.7);
 }
 
 .workout-item h3 {
@@ -169,3 +225,38 @@ button:hover {
   line-height: 1.8;
 }
 
+/* Responsive Styles */
+@media (max-width: 1024px) {
+  .header-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .navigation-menu {
+    flex-direction: column;
+  }
+
+  .workout-selection {
+    max-width: 95%;
+  }
+
+  .level-select,
+  .muscle-select {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .navigation-menu a {
+    font-size: 0.9rem;
+    padding: 8px 16px;
+  }
+
+  button {
+    padding: 10px 20px;
+  }
+
+  .workout-selection h1 {
+    font-size: 2rem;
+  }
+}

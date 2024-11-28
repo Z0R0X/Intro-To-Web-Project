@@ -1,183 +1,155 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="stylesheet" href="Styles/Common.css" />
-        <link rel="stylesheet" href="Styles/Calculator.css" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="Styles/Common.css" />
+    <link rel="stylesheet" href="Styles/Calculator.css" />
 
-        <script src="Scripts/Calculator.js" defer></script>
-        <title>Macros Calculator</title>
-    </head>
+    <script src="Scripts/Calculator.js" defer></script>
+    <title>Macros Calculator</title>
+  </head>
 
-    <body>
-        <div id="Back">
-            <header>
-                <nav class="header-container">
-                    <img
-                        src="Images/Workouts/Logo.jpg"
-                        alt="Logo"
-                        class="Logo"
-                    />
-                    <ul class="navigation-menu">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="Workouts.html">Workouts</a></li>
-                        <li><a href="Calculator.html">Macros Calculator</a></li>
-                        <li><a href="Products.html">Shop</a></li>
-                        <li><a href="About-Us.html">About Us</a></li>
-                    </ul>
-                    <div class="login-section">
-                        <a href="login.html" class="login-button">Login</a>
-                    </div>
-                </nav>
-            </header>
-            <main>
-                <section class="calculator-section">
-                    <h1 class="title">Macros Calculator</h1>
-                    <form id="macros-form" class="macros-form">
-                        <div class="input-group">
-                            <label for="food-name">Food Item</label>
-                            <div style="position: relative; width: 100%">
-                                <input
-                                    type="text"
-                                    id="food-name"
-                                    placeholder="Search for food..."
-                                    class="styled-search-bar"
-                                    autocomplete="off"
-                                />
-                                <ul
-                                    id="food-suggestions"
-                                    class="food-suggestions"
-                                ></ul>
-                            </div>
-                        </div>
-
-                        <div class="input-group">
-                            <label for="grams">Grams Consumed</label>
-                            <input
-                                type="number"
-                                id="grams"
-                                placeholder="e.g., 100"
-                                required
-                            />
-                        </div>
-                        <div class="button-group">
-                            <button
-                                type="button"
-                                id="add-food"
-                                class="action-button"
-                            >
-                                Add Food
-                            </button>
-                            <button
-                                type="button"
-                                id="reset-table"
-                                class="action-button"
-                            >
-                                Reset Table
-                            </button>
-                        </div>
-                    </form>
-                    <table class="macros-table">
-                        <thead>
-                            <tr>
-                                <th>Food</th>
-                                <th>Grams</th>
-                                <th>Proteins</th>
-                                <th>Carbs</th>
-                                <th>Fats</th>
-                                <th>Calories</th>
-                            </tr>
-                        </thead>
-                        <tbody id="macros-body"></tbody>
-                        <tfoot>
-                            <tr>
-                                <td colspan="2">Total</td>
-                                <td id="total-proteins">0g</td>
-                                <td id="total-carbs">0g</td>
-                                <td id="total-fats">0g</td>
-                                <td id="total-calories">0</td>
-                            </tr>
-                        </tfoot>
-                    </table>
-                </section>
-            </main>
-        </div>
-
-        <link
-            rel="stylesheet"
-            type="text/css"
-            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
-        />
-        <footer class="footer">
-            <div class="container">
-                <div class="row">
-                    <div class="footer-col">
-                        <h4>Support</h4>
-                        <ul>
-                            <li>
-                                <a href="mailto: support@trainandthrive.com"
-                                    >Help Center</a
-                                >
-                            </li>
-                            <li><a href="About-Us.html">About Us</a></li>
-                        </ul>
-                    </div>
-                    <div class="footer-col">
-                        <h4>Customer Service</h4>
-                        <ul>
-                            <li><a href="Cart.html">Track Your Order</a></li>
-                            <li>
-                                <a href="Products.html#gift-certificate"
-                                    >Gift Certificates</a
-                                >
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="footer-col">
-                        <h4>online shop</h4>
-                        <ul>
-                            <li>
-                                <a href="Products.html#category0"
-                                    >Protien Powders</a
-                                >
-                            </li>
-                            <li>
-                                <a href="Products.html#category1">Flakes</a>
-                            </li>
-                            <li>
-                                <a href="Products.html#category2"
-                                    >Mass Gainer</a
-                                >
-                            </li>
-                            <li>
-                                <a href="Products.html#category3"
-                                    >Energy Flavors</a
-                                >
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="footer-col">
-                        <h4>follow us</h4>
-                        <div class="social-links">
-                            <a
-                                href="https://www.facebook.com/trainandthrive"
-                                target="_blank"
-                                ><i class="fab fa-facebook-f"></i
-                            ></a>
-                            <a
-                                href="https://www.instagram.com/trainandthrive"
-                                target="_blank"
-                                ><i class="fab fa-instagram"></i
-                            ></a>
-                            <a href="https://wa.me/81932062" target="_blank"
-                                ><i class="fab fa-whatsapp"></i
-                            ></a>
-                        </div>
-                    </div>
-                </div>
+  <body>
+    <div id="Back">
+      <header>
+        <nav class="header-container">
+          <img src="Images/Workouts/Logo.jpg" alt="Logo" class="Logo" />
+          <ul class="navigation-menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="Workouts.html">Workouts</a></li>
+            <li><a href="Calculator.html">Macros Calculator</a></li>
+            <li><a href="Products.html">Shop</a></li>
+            <li><a href="About-Us.html">About Us</a></li>
+          </ul>
+          <div class="login-section">
+            <a href="login.html" class="login-button">Login</a>
+          </div>
+        </nav>
+      </header>
+      <main>
+        <section class="calculator-section">
+          <h1 class="title">Macros Calculator</h1>
+          <form id="macros-form" class="macros-form">
+            <div class="input-group">
+              <label for="food-name">Food Item</label>
+              <div style="position: relative; width: 100%">
+                <input
+                  type="text"
+                  id="food-name"
+                  placeholder="Search for food..."
+                  class="styled-search-bar"
+                  autocomplete="off"
+                />
+                <ul id="food-suggestions" class="food-suggestions"></ul>
+              </div>
             </div>
-            <p>&copy; 2024 Train & Thrive. All Rights Reserved.</p>
-        </footer>
-    </body>
+
+            <div class="input-group">
+              <label for="grams">Grams Consumed</label>
+              <input
+                type="number"
+                id="grams"
+                placeholder="e.g., 100"
+                required
+              />
+            </div>
+            <div id="error-message" class="error-message"></div>
+            <div class="button-group">
+              <button type="button" id="add-food" class="action-button">
+                Add Food
+              </button>
+              <button type="button" id="reset-table" class="action-button">
+                Reset Table
+              </button>
+            </div>
+          </form>
+          <table class="macros-table">
+            <thead>
+              <tr>
+                <th>Food</th>
+                <th>Grams</th>
+                <th>Proteins</th>
+                <th>Carbs</th>
+                <th>Fats</th>
+                <th>Calories</th>
+              </tr>
+            </thead>
+            <tbody id="macros-body"></tbody>
+            <tfoot>
+              <tr>
+                <td colspan="2">Total</td>
+                <td id="total-proteins">0g</td>
+                <td id="total-carbs">0g</td>
+                <td id="total-fats">0g</td>
+                <td id="total-calories">0</td>
+              </tr>
+            </tfoot>
+          </table>
+        </section>
+      </main>
+    </div>
+
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+    />
+    <footer class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="footer-col">
+            <h4>Support</h4>
+            <ul>
+              <li>
+                <a href="mailto: support@trainandthrive.com">Help Center</a>
+              </li>
+              <li><a href="About-Us.html">About Us</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Customer Service</h4>
+            <ul>
+              <li><a href="Cart.html">Track Your Order</a></li>
+              <li>
+                <a href="Products.html#gift-certificate">Gift Certificates</a>
+              </li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>online shop</h4>
+            <ul>
+              <li>
+                <a href="Products.html#category0">Protien Powders</a>
+              </li>
+              <li>
+                <a href="Products.html#category1">Flakes</a>
+              </li>
+              <li>
+                <a href="Products.html#category2">Mass Gainer</a>
+              </li>
+              <li>
+                <a href="Products.html#category3">Energy Flavors</a>
+              </li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>follow us</h4>
+            <div class="social-links">
+              <a href="https://www.facebook.com/trainandthrive" target="_blank"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+              <a href="https://www.instagram.com/trainandthrive" target="_blank"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a href="https://wa.me/81932062" target="_blank"
+                ><i class="fab fa-whatsapp"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p>&copy; 2024 Train & Thrive. All Rights Reserved.</p>
+    </footer>
+  </body>
 </html>

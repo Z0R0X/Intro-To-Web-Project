@@ -17,6 +17,8 @@ document.addEventListener("DOMContentLoaded", function () {
         })
         .catch(error => console.error('Error fetching workouts:', error));
 
+        
+
     function displayWorkouts() {
         workoutResults.innerHTML = "";
 
