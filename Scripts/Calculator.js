@@ -80,7 +80,7 @@ document.addEventListener("DOMContentLoaded", () => {
             let proteins = ((food.protein / 100) * grams).toFixed(2);
             let carbs = ((food.carbs / 100) * grams).toFixed(2);
             let fats = ((food.fats / 100) * grams).toFixed(2);
-            let calories = ((food.calories / 100) * grams).toFixed(2);
+            let calories = ((food.calories / 100) * grams).toFixed();
 
             addFoodToTable(foodName, grams, proteins, carbs, fats, calories);
             updateTotals(proteins, carbs, fats, calories);
@@ -91,6 +91,22 @@ document.addEventListener("DOMContentLoaded", () => {
             displayErrorMessage("Food item not found in the database.");
         }
     });
+
+    document.getElementById("reset-table").addEventListener("click", () => {
+        let tableBody = document.getElementById("macros-body");
+        tableBody.innerHTML = "";
+    
+        document.getElementById("total-proteins").textContent = "0g";
+        document.getElementById("total-carbs").textContent = "0g";
+        document.getElementById("total-fats").textContent = "0g";
+        document.getElementById("total-calories").textContent = "0";
+    
+        document.getElementById("food-name").value = "";
+        document.getElementById("grams").value = "";
+    
+        
+    });
+    
 
     function addFoodToTable(name, grams, proteins, carbs, fats, calories) {
         let tableBody = document.getElementById("macros-body");
