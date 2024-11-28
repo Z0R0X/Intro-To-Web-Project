@@ -11,9 +11,6 @@
     font-family: quoteFont;
     src: url("../Styles/Crows Driven.otf") format("opentype");
 }
-*
-{
-}
 header
 {
     background-image: url("../Images/Products/background1.jpg");
@@ -80,8 +77,12 @@ main
 {
     height: 100px
 }
+.link
+{
+    transition-duration: 0.2s;
+}
 .link:hover {
-    transform: scale(1.05);
+    transform: scale(1.2);
     box-shadow: var(--box-shadow-hover);
   }
 hr
@@ -109,19 +110,21 @@ hr
 {
     width: 400px;
     height: 500px;
-    border: solid 10px;
+    border:solid 10px;
     border-radius: 20px;
     font-size: 1.5rem;
+    transition-duration: 0.2s;
+    overflow: hidden;
 }
 .item:hover {
     transform: scale(1.05);
-    box-shadow: var(--box-shadow-hover);
+    box-shadow: 0 10px 20px black;
   }
 .item div
 {
     background-color: black;
     color: var(--primary-color);
-    height: 200px;
+    height: 180px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -130,8 +133,16 @@ hr
 }
 .item img
 {
-    width: 300px;
-    margin-top: 20px;
+    height: 60%;
+    width: auto;
+    margin-top: 25%;
+    margin-bottom: 25%;
+    transition-duration: 0.7s;
+}
+.item:hover img
+{
+    height: 55%;
+    margin-top: 10px;
     margin-bottom: 20px;
 }
 .item p
@@ -146,11 +157,38 @@ hr
     height: 50px;
     color: white;
     font-size: 1.5rem;
+    overflow: hidden;
+    transition:  all 0.3s ease;
 }
 .item button:hover {
     transform: scale(1.05);
     box-shadow: var(--box-shadow-hover);
-  }
+}
+.item button span {
+    position: absolute;
+    width: 100%;
+    top: 10px;
+    left: 0;
+    text-align: center;
+    transition: 1s;
+}
+
+.item button .text-out {
+
+    transform: translateX(0);
+}
+.item button .text-out-animate {
+
+    transform: translateX(-100%);
+}
+
+
+.item button .text-in {
+    transform: translateX(100%);
+}
+.item button .text-in-animate {
+    transform: translateX(0);
+}
 
 .storePart:nth-child(2n+1)
 {
@@ -171,7 +209,7 @@ hr
     background-color: black;
 }
 .storePart:nth-child(2n+1) .item:hover {
-    box-shadow: black;
+    box-shadow: var(--box-shadow-hover);
   }
 .storePart:nth-child(2n+1) div
 {

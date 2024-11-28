@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Document</title>
+        <title>Cart</title>
         <link rel="stylesheet" href="Styles/Common.css" />
         <link rel="stylesheet" href="Styles/Cart.css" />
         <script src="Scripts/jquery-3.7.1.min.js"></script>
@@ -27,14 +27,42 @@
         </header>
         <main>
             <h1>Cart</h1>
-            <div id="itemParent"></div>
+            <div id="cart">
+                <div id="itemParent"></div>
+                <div id="total">
+                    <div id="subtotal">Subtotal: $1002</div>
+                    <div id="payment-section">
+                        <h3>Payment Method</h3>
+                        <label for="card-number">Card Number:</label>
+                        <input
+                            type="text"
+                            id="card-number"
+                            placeholder="**** **** **** 1234"
+                        />
+
+                        <label for="card-holder">Card Holder:</label>
+                        <input
+                            type="text"
+                            id="card-holder"
+                            placeholder="John Doe"
+                        />
+
+                        <label for="expiry-date">Expiry Date:</label>
+                        <input
+                            type="text"
+                            id="expiry-date"
+                            placeholder="MM/YY"
+                        />
+
+                        <label for="cvv">CVV:</label>
+                        <input type="password" id="cvv" placeholder="***" />
+
+                        <button id="pay-button">Pay Now</button>
+                    </div>
+                </div>
+            </div>
         </main>
 
-        <link
-            rel="stylesheet"
-            type="text/css"
-            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
-        />
         <link
             rel="stylesheet"
             type="text/css"

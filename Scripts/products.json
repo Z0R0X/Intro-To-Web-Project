@@ -23,168 +23,168 @@
     "name": "MP Combat",
     "price": 60,
     "category": "Protein Powders",
-    "image": "./Images/Products/storeitem.png"
+    "image": "./Images/Products/Product Images/1.png"
   },
   {
     "id": 2,
     "name": "Whey Isolate",
     "price": 55,
     "category": "Protein Powders",
-    "image": "./Images/Products/storeitem.png"
+    "image": "./Images/Products/Product Images/2.png"
   },
   {
     "id": 3,
     "name": "Gold Whey",
     "price": 65,
     "category": "Protein Powders",
-    "image": "./Images/Products/storeitem.png"
+    "image": "./Images/Products/Product Images/3.png"
   },
   {
     "id": 4,
     "name": "Musashi High",
     "price": 70,
     "category": "Protein Powders",
-    "image": "./Images/Products/storeitem.png"
+    "image": "./Images/Products/Product Images/4.png"
   },
   {
     "id": 5,
     "name": "Euphoriq Pre-Workout",
     "price": 55,
     "category": "Protein Powders",
-    "image": "./Images/Products/storeitem.png"
+    "image": "./Images/Products/Product Images/5.png"
   },
   {
     "id": 6,
     "name": "BCAA Mega Size",
     "price": 45,
     "category": "Protein Powders",
-    "image": "./Images/Products/storeitem.png"
+    "image": "./Images/Products/Product Images/6.png"
   },
   {
     "id": 7,
     "name": "Vanilla Cake",
     "price": 40,
     "category": "Flakes",
-    "image": "./Images/Products/storeitem.png"
+    "image": "./Images/Products/Product Images/7.png"
   },
   {
     "id": 8,
     "name": "BlueBerry Yogurt",
     "price": 40,
     "category": "Flakes",
-    "image": "./Images/Products/storeitem.png"
+    "image": "./Images/Products/Product Images/8.png"
   },
   {
     "id": 9,
     "name": "Vanilla Cake",
     "price": 40,
     "category": "Flakes",
-    "image": "./Images/Products/storeitem.png"
+    "image": "./Images/Products/Product Images/9.png"
   },
   {
     "id": 10,
     "name": "S'mores Bar",
     "price": 40,
     "category": "Flakes",
-    "image": "./Images/Products/storeitem.png"
+    "image": "./Images/Products/Product Images/10.png"
   },
   {
     "id": 11,
     "name": "Chocolate & Peanut Bar",
     "price": 40,
     "category": "Flakes",
-    "image": "./Images/Products/storeitem.png"
+    "image": "./Images/Products/Product Images/11.png"
   },
   {
     "id": 12,
     "name": "Cookie Dough Bard",
     "price": 40,
     "category": "Flakes",
-    "image": "./Images/Products/storeitem.png"
+    "image": "./Images/Products/Product Images/12.png"
   },
   {
     "id": 13,
     "name": "True-Mass Vanilla",
     "price": 19.99,
     "category": "Mass Gainer",
-    "image": "./Images/Products/storeitem.png"
+    "image": "./Images/Products/Product Images/13.png"
   },
   {
     "id": 14,
     "name": "Dymatize Red",
     "price": 50,
     "category": "Mass Gainer",
-    "image": "./Images/Products/storeitem.png"
+    "image": "./Images/Products/Product Images/14.png"
   },
   {
     "id": 15,
     "name": "True-Mass Chocolate",
     "price": 45,
     "category": "Mass Gainer",
-    "image": "./Images/Products/storeitem.png"
+    "image": "./Images/Products/Product Images/15.png"
   },
   {
     "id": 16,
     "name": "Muscle Tech",
     "price": 55,
     "category": "Mass Gainer",
-    "image": "./Images/Products/storeitem.png"
+    "image": "./Images/Products/Product Images/16.png"
   },
   {
     "id": 17,
     "name": "Gold Pro Gainer",
     "price": 55,
     "category": "Mass Gainer",
-    "image": "./Images/Products/storeitem.png"
+    "image": "./Images/Products/Product Images/17.png"
   },
   {
     "id": 18,
     "name": "Essential Mass Gainer",
     "price": 50,
     "category": "Mass Gainer",
-    "image": "./Images/Products/storeitem.png"
+    "image": "./Images/Products/Product Images/18.png"
   },
   {
     "id": 19,
     "name": "Amino Green Apple",
     "price": 40,
     "category": "Energy Flavors",
-    "image": "./Images/Products/storeitem.png"
+    "image": "./Images/Products/Product Images/19.png"
   },
   {
     "id": 20,
     "name": "Amino Blueberry Mojito",
     "price": 40,
     "category": "Energy Flavors",
-    "image": "./Images/Products/storeitem.png"
+    "image": "./Images/Products/Product Images/20.png"
   },
   {
     "id": 21,
     "name": "Amino WaterMelon",
     "price": 40,
     "category": "Energy Flavors",
-    "image": "./Images/Products/storeitem.png"
+    "image": "./Images/Products/Product Images/21.png"
   },
   {
     "id": 22,
     "name": "Amino Tangerine",
     "price": 40,
     "category": "Energy Flavors",
-    "image": "./Images/Products/storeitem.png"
+    "image": "./Images/Products/Product Images/22.png"
   },
   {
     "id": 23,
     "name": "Amino PineApple",
     "price": 40,
     "category": "Energy Flavors",
-    "image": "../Images/Products/storeitem.png"
+    "image": "../Images/Products/Product Images/23.png"
   },
   {
     "id": 24,
     "name": "Amino Blue Raspberry",
     "price": 40,
     "category": "Energy Flavors",
-    "image": "../Images/Products/storeitem.png"
+    "image": "../Images/Products/Product Images/24.png"
   }
 ]
 }

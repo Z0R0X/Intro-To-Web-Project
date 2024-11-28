@@ -43,25 +43,24 @@
                     src="Images/Home page/powder.png"
                     alt="powder supplement"
                 />
-                <button>POWDER</button>
+                <a href="Products.html#category0"><button>POWDER</button></a>
             </div>
             <div class="itemtype">
                 <img
                     src="Images/Home page/mass-gainer.png"
                     alt="mass gainer supplement"
                 />
-                <button>MASS GAINER</button>
+                <a href="Products.html#category1"><button>MASS GAINER</button></a>
             </div>
             <div class="itemtype">
                 <img
                     src="Images/Home page/flakes.png"
-                    alt="flakes supplement"
-                />
-                <button>FLAKES</button>
+                    alt="flakes supplement"/>
+                <a href="Products.html#category2"><button>FLAKES</button></a>
             </div>
-        </section>
+        </section>        
 
-        <section class="nutrition-advice-section">
+        <section class="nutrition-advice-section" id="nutrition-advice-section">
             <div class="categories">
                 <h2>NUTRITION ADVICE</h2>
             </div>
@@ -125,9 +124,12 @@
                                 physical job)
                             </option>
                         </select>
-                    </div>
-                    <button>Calculate</button>
+                    </div><div class="center-item">
                     <span id="result"></span>
+                </div>
+                    <div class="center-item">
+                          <button>Calculate</button>
+                        </div>
                 </div>
             </div>
         </section>
@@ -135,27 +137,27 @@
         <section class="exclusive-services">
             <h2 class="excl">EXCLUSIVE SERVICES</h2>
             <div class="exclusive">
-                <div class="service-card">
+                <a href="About-Us.html">  <div class="service-card">
                     <img
                         src="Images/Home page/Loyalty.png"
                         alt="Loyalty Program icon"
                     />
                     <h3>Loyalty Program</h3>
-                </div>
-                <div class="service-card">
+                </div></a>
+                <a href="Workouts.html"> <div class="service-card">
                     <img
                         src="Images/Home page/Plans.png"
-                        alt="Customized Plans icon"
+                        alt="Workouts Plans icon"
                     />
-                    <h3>Customized Plans</h3>
-                </div>
-                <div class="service-card">
+                    <h3>Workouts Plans</h3>
+                </div></a> 
+                <a href="#nutrition-advice-section">  <div class="service-card">
                     <img
                         src="Images/Home page/Nutrition.png"
                         alt="Nutrition Advice icon"
                     />
                     <h3>Nutrition Advice</h3>
-                </div>
+                </div></a> 
             </div>
         </section>
         <section class="reviews">
@@ -176,13 +178,7 @@
                     <input type="text" id="reviewName" name="name" required />
 
                     <label for="reviewText">Your Review:</label>
-                    <textarea
-                        id="reviewText"
-                        name="review"
-                        rows="4"
-                        required
-                    ></textarea>
-
+                    <textarea id="reviewText" name="review" rows="4" required></textarea>
                     <button type="submit">Submit</button>
                 </form>
             </div>
@@ -227,22 +223,16 @@
                         <h4>online shop</h4>
                         <ul>
                             <li>
-                                <a href="Products.html#category0"
-                                    >Protien Powders</a
-                                >
+                                <a href="Products.html#category0" >Protien Powders</a >
                             </li>
                             <li>
                                 <a href="Products.html#category1">Flakes</a>
                             </li>
                             <li>
-                                <a href="Products.html#category2"
-                                    >Mass Gainer</a
-                                >
+                                <a href="Products.html#category2" >Mass Gainer</a>
                             </li>
                             <li>
-                                <a href="Products.html#category3"
-                                    >Energy Flavors</a
-                                >
+                                <a href="Products.html#category3">Energy Flavors</a>
                             </li>
                         </ul>
                     </div>
