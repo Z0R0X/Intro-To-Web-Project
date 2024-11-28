@@ -227,14 +227,7 @@ button:hover {
 
 /* Responsive Styles */
 @media (max-width: 1024px) {
-  .header-container {
-    flex-direction: column;
-    align-items: center;
-  }
 
-  .navigation-menu {
-    flex-direction: column;
-  }
 
   .workout-selection {
     max-width: 95%;
@@ -247,10 +240,7 @@ button:hover {
 }
 
 @media (max-width: 768px) {
-  .navigation-menu a {
-    font-size: 0.9rem;
-    padding: 8px 16px;
-  }
+
 
   button {
     padding: 10px 20px;
