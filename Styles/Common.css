@@ -177,7 +177,6 @@ footer p {
 @media screen and (max-width: 767px) {
   .header-container
   {
-    background-color: #636363ce;
     align-items: center;
     flex-direction: column;
   }

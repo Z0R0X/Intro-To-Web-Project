@@ -241,7 +241,10 @@ button:hover {
 
 @media (max-width: 768px) {
 
-
+  header
+  {
+    height: 500px;
+  }
   button {
     padding: 10px 20px;
   }

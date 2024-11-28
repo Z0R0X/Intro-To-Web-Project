@@ -248,6 +248,9 @@ body
     .macros-table td {
         font-size: 0.8rem;
     }
+    .header-container
+    {
+      background-color: #636363ce;
+    }
+
 }
-
-
