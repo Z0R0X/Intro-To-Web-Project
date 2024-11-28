@@ -73,7 +73,6 @@ document.addEventListener("DOMContentLoaded", () => {
         return storedReviews;
     }
 
-    // Function to save reviews to localStorage
     function saveReviews(localReviews) {
         localStorage.setItem("reviews", JSON.stringify(localReviews));
     }
@@ -130,10 +129,8 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         let newReview = { name: name, description: reviewText };
-
-        // Load existing reviews from localStorage, add the new one to the front
         let localReviews = loadReviewsFromLocalStorage();
-        localReviews.unshift(newReview);  // Adds the new review to the top of the array
+        localReviews.unshift(newReview);
 
 
          
@@ -141,21 +138,36 @@ document.addEventListener("DOMContentLoaded", () => {
      if (localReviews.length > maxReviews) {
         localReviews.pop(); 
      }
-        saveReviews(localReviews); // Save the updated reviews to localStorage
+        saveReviews(localReviews);
 
-        // Update the display with the latest reviews
         displayReviews();
 
-        reviewForm.reset();  // Reset form fields after submission
+        reviewForm.reset(); 
         reviewModal.style.display = "none"; 
     });
 
-    // Reset localStorage (while keeping JSON data intact)
     resetButton.addEventListener("click", () => {
         if (confirm("Are you sure you want to reset the reviews?")) {
             localStorage.removeItem("reviews");
-            displayReviews(); // Display the JSON reviews again
+            displayReviews();
         }
     });
 });
 
+document.addEventListener('DOMContentLoaded', function () {
+    let loginButton = document.querySelector('.login-button'); 
+    let loggedInUser = JSON.parse(localStorage.getItem('loggedInUser'));
+
+    if (loggedInUser) {
+        loginButton.textContent = loggedInUser.name; 
+        loginButton.href = '#';
+
+        loginButton.addEventListener('click', function () {
+            let Confirm = confirm('Do you want to log out?');
+            if (Confirm) {
+                localStorage.removeItem('loggedInUser'); 
+                window.location.reload();
+            }
+        });
+    }
+});
