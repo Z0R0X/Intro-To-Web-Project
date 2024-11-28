@@ -1,7 +1,7 @@
 let cart = [];
 
 function addToCart(id) {
-    let existingItem = cart.find(item => item === id);
+    let existingItem = cart.find(item => item.id === id);
 
     if (existingItem) {
         alert("Item is already in the cart!");
@@ -20,6 +20,13 @@ function loadCart() {
     if (savedCart) {
         cart = JSON.parse(savedCart);
     }
+}
+function itemInCart(id)
+{
+    if(cart.find(item => item.id === id))
+        return true;
+
+    return false;
 }
 function loadProducts()
 {
@@ -47,14 +54,33 @@ function loadProducts()
     })
     products.forEach(product => {
         let catIndex = categories.findIndex(category => category.name === product.category);
-        var div = $("<div>").addClass("item");
-        var img = $("<img>").attr("src", product.image);
-        var dChild = $("<div>");
-        var name = $("<h4>").html(product.name);
-        var price = $("<p>").html('<p>Price:'+product.price+'$</p>');
-        var btn = $("<button>").html("Add To Cart");
-        btn.click(()=>{ 
-            addToCart(product.id);
+        let div = $("<div>").addClass("item");
+        let img = $("<img>").attr("src", product.image);
+        let dChild = $("<div>");
+        let name = $("<h4>").html(product.name);
+        let price = $("<p>").html('<p>Price:'+product.price+'$</p>');
+        if(itemInCart(product.id))
+            var btn = $("<button>").html("Go To Cart");
+        else
+            var btn = $("<button>").html("Add To Cart");
+
+        
+        btn.click(() => {
+            if (itemInCart(product.id)) {
+                window.location.href = "cart.html";
+            } else {
+                let oldText = $('<span>').addClass('text-out').text("Add To Cart");
+                let newText = $('<span>').addClass('text-in').text("Go To Cart");
+                btn.empty().append(oldText, newText);
+                setTimeout(() => {
+                    oldText.addClass('text-out-animate');
+                    newText.addClass('text-in-animate');
+                }, 100); 
+                setTimeout(() => {
+                    btn.html("Go To Cart")
+                    addToCart(product.id); 
+                }, 1000); 
+            }
         });
         dChild.append(name, price, btn);
         div.append(img, dChild);
@@ -67,7 +93,7 @@ function loadProducts()
 function filterProducts(searchTerm) {
     searchTerm = searchTerm.toLowerCase();
     $(".item").each(function () {
-        const productName = $(this).find("h4").text().toLowerCase();
+        var productName = $(this).find("h4").text().toLowerCase();
         if (productName.includes(searchTerm)) {
             $(this).show();
         } else {
@@ -75,6 +101,20 @@ function filterProducts(searchTerm) {
         }
     });
 }
+
+function scrollToHash()
+{
+    let hash = window.location.hash;
+    if (hash) {
+        let targetElement = document.querySelector(hash);
+        if (targetElement) {
+            targetElement.scrollIntoView({ behavior: "smooth" });
+        }
+    }
+}
+
+window.addEventListener('hashchange', scrollToHash);
+
 
 $(document).ready(function () {
     $("#search-bar").on("input", function () {
@@ -86,14 +126,7 @@ $(document).ready(function () {
     loadCart();
     loadProducts();
     setTimeout(() => {
-        let hash = window.location.hash;
-        if (hash) {
-        let targetElement = document.querySelector(hash);
-        if (targetElement) {
-            targetElement.scrollIntoView({ behavior: "smooth" });
-        }
-        }
+        scrollToHash();
       }, 500);
-    
 });
 
