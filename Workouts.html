@@ -1,155 +1,134 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="stylesheet" href="Styles/Common.css" />
-        <link rel="stylesheet" href="Styles/Workouts.css" />
-        <script src="Scripts/Workouts.js" defer></script>
-        <title>Workouts</title>
-    </head>
-    <header>
-        <nav class="header-container">
-            <img src="Images/Workouts/Logo.jpg" alt="" class="Logo" />
-            <ul class="navigation-menu">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="Workouts.html">Workouts</a></li>
-                <li><a href="Calculator.html">Macros Calculator</a></li>
-                <li><a href="Products.html">Shop</a></li>
-                <li><a href="About-Us.html">About Us</a></li>
-            </ul>
-            <div class="login-section">
-                <a href="login.html" class="login-button">Login</a>
-            </div>
-        </nav>
-    </header>
-    <body>
-        <main class="workout-selection">
-            <h1>Select Your Workout</h1>
-            <div class="workout-options">
-                <div class="level-select">
-                    <h2>Choose Your Level</h2>
-                    <button class="level-button" data-level="beginner">
-                        Beginner
-                    </button>
-                    <button class="level-button" data-level="intermediate">
-                        Intermediate
-                    </button>
-                    <button class="level-button" data-level="advanced">
-                        Advanced
-                    </button>
-                    <button class="reset-button" id="reset-level">
-                        Reset Level
-                    </button>
-                </div>
 
-                <div class="muscle-select">
-                    <h2>Select Muscle Group</h2>
-                    <button class="muscle-button" data-muscle="chest">
-                        Chest
-                    </button>
-                    <button class="muscle-button" data-muscle="back">
-                        Back
-                    </button>
-                    <button class="muscle-button" data-muscle="legs">
-                        Legs
-                    </button>
-                    <button class="muscle-button" data-muscle="arms">
-                        Arms
-                    </button>
-                    <button class="muscle-button" data-muscle="shoulders">
-                        Shoulders
-                    </button>
-                    <button class="muscle-button" data-muscle="core">
-                        Core
-                    </button>
-                    <button class="reset-button" id="reset-muscle">
-                        Reset Muscle
-                    </button>
-                </div>
-            </div>
-            <div id="workout-results"></div>
-        </main>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="Styles/Common.css" />
+    <link rel="stylesheet" href="Styles/Workouts.css" />
+    <script src="Scripts/Workouts.js" defer></script>
+    <title>Workouts</title>
+</head>
+<header>
+    <nav class="header-container">
+        <img src="Images/Workouts/Logo.jpg" alt="" class="Logo" />
+        <ul class="navigation-menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="Workouts.html">Workouts</a></li>
+            <li><a href="Calculator.html">Macros Calculator</a></li>
+            <li><a href="Products.html">Shop</a></li>
+            <li><a href="About-Us.html">About Us</a></li>
+        </ul>
+        <div class="login-section">
+            <a href="login.html" class="login-button">Login</a>
+        </div>
+    </nav>
+</header>
 
-        <link
-            rel="stylesheet"
-            type="text/css"
-            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
-        />
-        <link
-            rel="stylesheet"
-            type="text/css"
-            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
-        />
-        <footer class="footer">
-            <div class="cont">
-                <div class="row">
-                    <div class="footer-col">
-                        <h4>Support</h4>
-                        <ul>
-                            <li>
-                                <a href="mailto: support@trainandthrive.com"
-                                    >Help Center</a
-                                >
-                            </li>
-                            <li><a href="About-Us.html">About Us</a></li>
-                        </ul>
-                    </div>
-                    <div class="footer-col">
-                        <h4>Customer Service</h4>
-                        <ul>
-                            <li><a href="Cart.html">Track Your Order</a></li>
-                            <li>
-                                <a href="Products.html#gift-certificate"
-                                    >Gift Certificates</a
-                                >
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="footer-col">
-                        <h4>online shop</h4>
-                        <ul>
-                            <li>
-                                <a href="Products.html#category0"
-                                    >Protien Powders</a
-                                >
-                            </li>
-                            <li>
-                                <a href="Products.html#category1">Flakes</a>
-                            </li>
-                            <li>
-                                <a href="Products.html#category2"
-                                    >Mass Gainer</a
-                                >
-                            </li>
-                            <li>
-                                <a href="Products.html#category3"
-                                    >Energy Flavors</a
-                                >
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="footer-col">
-                        <h4>follow us</h4>
-                        <div class="social-links">
-                            <a
-                                href="https://www.facebook.com/trainandthrive"
-                                target="_blank"
-                                ><i class="fab fa-facebook-f"></i
-                            ></a>
-                            <a
-                                href="https://www.instagram.com/trainandthrive"
-                                target="_blank"
-                                ><i class="fab fa-instagram"></i
-                            ></a>
-                            <a href="https://wa.me/81932062" target="_blank"
-                                ><i class="fab fa-whatsapp"></i
-                            ></a>
-                        </div>
+<body>
+    <main class="workout-selection">
+        <h1>Select Your Workout</h1>
+        <div class="workout-options">
+            <div class="level-select">
+                <h2>Choose Your Level</h2>
+                <button class="level-button" data-level="beginner">
+                    Beginner
+                </button>
+                <button class="level-button" data-level="intermediate">
+                    Intermediate
+                </button>
+                <button class="level-button" data-level="advanced">
+                    Advanced
+                </button>
+                <button class="reset-button" id="reset-level">
+                    Reset Level
+                </button>
+            </div>
+
+            <div class="muscle-select">
+                <h2>Select Muscle Group</h2>
+                <button class="muscle-button" data-muscle="chest">
+                    Chest
+                </button>
+                <button class="muscle-button" data-muscle="back">
+                    Back
+                </button>
+                <button class="muscle-button" data-muscle="legs">
+                    Legs
+                </button>
+                <button class="muscle-button" data-muscle="arms">
+                    Arms
+                </button>
+                <button class="muscle-button" data-muscle="shoulders">
+                    Shoulders
+                </button>
+                <button class="muscle-button" data-muscle="core">
+                    Core
+                </button>
+                <button class="reset-button" id="reset-muscle">
+                    Reset Muscle
+                </button>
+            </div>
+        </div>
+        <div id="workout-results"></div>
+    </main>
+
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
+    <footer class="footer">
+        <div class="cont">
+            <div class="row">
+                <div class="footer-col">
+                    <h4>Support</h4>
+                    <ul>
+                        <li>
+                            <a href="mailto: support@trainandthrive.com">Help Center</a>
+                        </li>
+                        <li><a href="About-Us.html">About Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Customer Service</h4>
+                    <ul>
+                        <li><a href="Cart.html">Track Your Order</a></li>
+                        <li>
+                            <a href="Products.html#gift-certificate">Gift Certificates</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>online shop</h4>
+                    <ul>
+                        <li>
+                            <a href="Products.html#category0">Protien Powders</a>
+                        </li>
+                        <li>
+                            <a href="Products.html#category1">Flakes</a>
+                        </li>
+                        <li>
+                            <a href="Products.html#category2">Mass Gainer</a>
+                        </li>
+                        <li>
+                            <a href="Products.html#category3">Energy Flavors</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>follow us</h4>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/trainandthrive" target="_blank"><i
+                                class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/trainandthrive" target="_blank"><i
+                                class="fab fa-instagram"></i></a>
+                        <a href="https://wa.me/81932062" target="_blank"><i class="fab fa-whatsapp"></i></a>
                     </div>
                 </div>
             </div>
-            <p>&copy; 2024 Train & Thrive. All Rights Reserved.</p>
-        </footer>
-    </body>
+        </div>
+        <p>&copy; 2024 Train & Thrive. All Rights Reserved.</p>
+    </footer>
+</body>
+
 </html>
