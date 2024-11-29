@@ -69,7 +69,7 @@ function loadCart() {
         let img = $("<img>").attr("src", product.image);
         
         let name = $("<p>").html(product.name);
-        let namesection = $("<section>").append($("<h2>").html("Name"), name)
+        let namesection = $("<section>").append(name)
 
         let subtractButton = $("<button>").html("-");
         let quantity = $("<input>").val(cartItem.quantity).attr("id","quantity-"+cartItem.id).attr("type", "number").attr("min", "1");

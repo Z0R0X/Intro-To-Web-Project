@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     async function loadFoodData() {
         try {
-            const response = await fetch("Scripts/Calculator.json");
+            let response = await fetch("Scripts/Calculator.json");
             foodData = await response.json();
             console.log("Food data loaded:", foodData); 
         } catch (error) {
@@ -75,7 +75,7 @@ document.addEventListener("DOMContentLoaded", () => {
             return;
         }
 
-        const food = foodData[foodName];
+        let food = foodData[foodName];
         if (food) {
             let proteins = ((food.protein / 100) * grams).toFixed(2);
             let carbs = ((food.carbs / 100) * grams).toFixed(2);

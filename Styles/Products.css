@@ -11,6 +11,11 @@
     font-family: quoteFont;
     src: url("../Styles/Crows Driven.otf") format("opentype");
 }
+*
+{
+    padding: 0;
+    margin: 0;
+}
 header
 {
     background-image: url("../Images/Products/background1.jpg");
@@ -31,6 +36,7 @@ header
     left: 59vw;
     top: 200px;
     width: 40vw;
+    padding-right: 10px;
     font-size: 48px;
     color: black;
     font-family: quoteFont;
@@ -72,10 +78,11 @@ main
     display: flex;
     align-items: center;
     justify-content: space-around;
+    flex-wrap: wrap;
 }
 .link img
 {
-    height: 100px
+    height: 100px;
 }
 .link
 {
@@ -267,4 +274,38 @@ hr
     background-color: #00cc00;
 }
 
+@media screen and (max-width: 1256px) {
 
+    #hero p
+    {
+        font-size: 50px;
+        left: 0;
+        top: 0;
+        width: auto;
+        background-color: rgba(128, 128, 128, 0.342);
+
+    }
+  }
+@media screen and (max-width: 768px) {
+
+    #hero
+    {
+        height: auto;
+    }
+    #hero p
+    {
+        font-size: 40px;
+    }
+    #links
+    {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+        margin-top: 30px;
+    }
+    .link img
+    {
+        height: 90px;
+    }
+  }

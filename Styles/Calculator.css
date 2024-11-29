@@ -143,6 +143,7 @@ body
     border-collapse: collapse;
     margin: 20px 0;
     animation: zoomIn 0.8s;
+    overflow-x: auto;
 }
 
 .macros-table th,
@@ -229,28 +230,19 @@ body
 
 
 
-@media (max-width: 768px) {
-    .calculator-section {
-        margin: 20px auto;
-        padding: 15px;
-    }
+@media screen and (max-width: 768px) {
 
-    .macros-form {
-        flex-direction: column;
-        align-items: center;
+    #table-parent
+    {
+        overflow-x: auto;
     }
-
-    .input-group input {
-        width: 100%;
-    }
-
     .macros-table th,
     .macros-table td {
-        font-size: 0.8rem;
+        padding: 0;
     }
-    .header-container
+    .button-group
     {
-      background-color: #636363ce;
+        display: flex;
+        flex-direction: column;
     }
-
 }
