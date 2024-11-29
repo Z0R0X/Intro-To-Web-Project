@@ -5,6 +5,11 @@ document.addEventListener('DOMContentLoaded', function () {
     if (loggedInUser) {
         loginButton.textContent = loggedInUser.name;
         loginButton.href = '#';
+        let cartButton = document.createElement('a');
+        cartButton.innerHTML = "Cart";
+        cartButton.href = "Cart.html";
+        cartButton.classList.add("login-button");
+        document.querySelector(".login-section").appendChild(cartButton);
 
         loginButton.addEventListener('click', function () {
             LogoutConfirmation();
