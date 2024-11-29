@@ -33,7 +33,6 @@
     margin-bottom: 40px;
 }
 
-/* Section Row Flex Layout */
 .section-row {
     display: flex;
     align-items: center;
@@ -70,25 +69,21 @@
     line-height: 1.6;
 }
 
-/* Video Section Styles */
 #video-section iframe {
     width: 45%;
     border-radius: 10px;
     
 }
 
-/* Hover Effect */
 .section-row img:hover,
 #video-section iframe:hover {
     transform: scale(1.05);
 }
 
-/* Button Hover Effect */
 button:hover {
     background-color: var(--button-hover);
 }
 
-/* Add gradient background effect */
 #about-us {
     background: var(--gradient-bg);
 }

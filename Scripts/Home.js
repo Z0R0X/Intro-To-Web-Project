@@ -139,7 +139,6 @@ document.addEventListener("DOMContentLoaded", () => {
         let reviewText = document.getElementById("reviewText").value;
 
         if (!name || !reviewText) {
-            alert("Both fields are required!");
             return;
         }
 
