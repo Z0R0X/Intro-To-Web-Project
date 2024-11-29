@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
             activityMultiplier = 1.55;
         } else if (activity === 'active') {
             activityMultiplier = 1.725;
-        } else if ( activity === 'very active') {
+        } else if (activity === 'very active') {
             activityMultiplier = 1.9;
         } else {
             resultDisplay.innerText = "Please select a valid activity level.";
@@ -43,8 +43,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
         let dailyCalories = bmr * activityMultiplier;
         resultDisplay.innerText = `Your estimated daily caloric needs are ${Math.round(dailyCalories)} calories.`;
+
+        document.getElementById('age').value = '';
+        document.getElementById('gender').value = '';
+        document.getElementById('height').value = '';
+        document.getElementById('weight').value = '';
+        document.getElementById('activity').value = '';
     });
 });
+
 
 document.addEventListener("DOMContentLoaded", () => {
     let openModalButton = document.getElementById("openModalButton");

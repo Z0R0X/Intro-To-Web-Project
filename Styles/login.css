@@ -1,3 +1,12 @@
+:root {
+    --primary-color: #00ff00;
+    --secondary-color: #ff5722;
+    --background-color: #000000;
+    --text-color: #ffffff;
+    --button-hover: #1e1e1e;
+    --gradient-bg: linear-gradient(135deg, #1e1e1e, #000000);
+    --box-shadow-hover: 0 10px 20px rgba(0, 255, 0, 0.6);
+}
 
 * {
     margin: 0;
@@ -5,25 +14,29 @@
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
 }
-body{
+
+body {
     height: 100vh;
-    background: linear-gradient(135deg, #1f1c2c, #928dab);
-    color: white;
+    background: var(--gradient-bg);
+    color: var(--text-color);
 }
-.button-home{
+
+.button-home {
     position: relative;
     bottom: 15px;
-    
 }
+
 .center {
     display: flex;
     justify-content: center;
     align-items: center;
-  height: 80%;
+    height: 80%;
 }
-#signup-form{
-display: none;
+
+#signup-form {
+    display: none;
 }
+
 .glass-container {
     width: 350px;
     padding: 30px;
@@ -47,7 +60,7 @@ input {
     border-radius: 8px;
     background: rgba(255, 255, 255, 0.2);
     border: 1px solid rgba(255, 255, 255, 0.3);
-    color: white;
+    color: var(--text-color);
     font-size: 14px;
     transition: all 0.3s ease-in-out;
 }
@@ -59,35 +72,25 @@ input::placeholder {
 input:focus {
     outline: none;
     background: rgba(255, 255, 255, 0.3);
-    border-color: rgba(255, 255, 255, 0.7);
+    border-color: var(--primary-color);
     transform: scale(1.03);
 }
 
 .options {
     display: flex;
-    align-items: center; 
-    font-size: 12px;
-    color: white;
-    gap: 8px;
-}
-
-.options input {
-    margin: 0;
-}
-
-.options label {
-    display: flex;
     align-items: center;
+    font-size: 12px;
+    gap: 8px;
 }
 
 .options a {
     text-decoration: none;
-    color: #00c6ff;
+    color: var(--secondary-color);
     transition: color 0.3s;
 }
 
 .options a:hover {
-    color: #84fab0;
+    color: var(--primary-color);
 }
 
 button {
@@ -95,8 +98,8 @@ button {
     margin-top: 20px;
     border: none;
     border-radius: 8px;
-    background: linear-gradient(90deg, #00c6ff, #0072ff);
-    color: white;
+    background: var(--primary-color);
+    color: var(--text-color);
     font-size: 14px;
     font-weight: bold;
     cursor: pointer;
@@ -104,9 +107,9 @@ button {
 }
 
 button:hover {
-    background: linear-gradient(90deg, #0072ff, #00c6ff);
+    background: var(--button-hover);
     transform: scale(1.05);
-    box-shadow: 0 4px 15px rgba(0, 198, 255, 0.3);
+    box-shadow: var(--box-shadow-hover);
 }
 
 p {
@@ -118,11 +121,11 @@ p {
 
 p a {
     text-decoration: none;
-    color: #84e6fa;
+    color: var(--secondary-color);
     font-weight: bold;
     transition: color 0.3s;
 }
 
 p a:hover {
-    color: #00c6ff;
+    color: var(--primary-color);
 }

@@ -1,6 +1,5 @@
-
-let loginForm = document.getElementById('login-form');
-let signupForm = document.getElementById('signup-form');
+let loginForm = document.getElementById('login-form-action');
+let signupForm = document.getElementById('signup-form-action');
 let switchToregister = document.getElementById('switch-to-register');
 let switchTologin = document.getElementById('switch-to-login');
 let formTitle = document.getElementById('form-title');
@@ -15,32 +14,36 @@ let newPassword = document.getElementById('new-password');
 
 let userAccounts = JSON.parse(localStorage.getItem('userAccounts')) || [];
 
-switchToregister.addEventListener('click', function(prevent) {
-    prevent.preventDefault();
-    loginForm.style.display = 'none';
-    signupForm.style.display = 'block';
+function setValidationMessage(input, message) {
+    input.setCustomValidity(message);
+    input.reportValidity();
+    setTimeout(() => input.setCustomValidity(''), 3000); 
+}
+
+switchToregister.addEventListener('click', function (event) {
+    event.preventDefault();
+    document.getElementById('login-form').style.display = 'none';
+    document.getElementById('signup-form').style.display = 'block';
     formTitle.textContent = 'Sign Up';
 });
 
-switchTologin.addEventListener('click', function(prevent) {
-    prevent.preventDefault();
-    signupForm.style.display = 'none';
-    loginForm.style.display = 'block';
+switchTologin.addEventListener('click', function (event) {
+    event.preventDefault();
+    document.getElementById('signup-form').style.display = 'none';
+    document.getElementById('login-form').style.display = 'block';
     formTitle.textContent = 'Login';
 });
 
-document.getElementById('signup-form-action').addEventListener('submit', function(prevent) {
-    prevent.preventDefault();
+signupForm.addEventListener('submit', function (event) {
+    event.preventDefault();
 
-    let usernameExists = userAccounts.some(user => user.username === newUsername.value);
-
-    if (usernameExists) {
-        alert('Username already exists. Please choose a different username.');
+    if (userAccounts.some(user => user.username === newUsername.value)) {
+        setValidationMessage(newUsername, 'This username is already taken. Please choose a different one.');
         return;
     }
 
     if (newPassword.value.length < 8) {
-        alert('Password must be at least 8 characters long.');
+        setValidationMessage(newPassword, 'Password must be at least 8 characters long.');
         return;
     }
 
@@ -51,28 +54,27 @@ document.getElementById('signup-form-action').addEventListener('submit', functio
         password: newPassword.value
     };
 
- 
     userAccounts.push(newUser);
     localStorage.setItem('userAccounts', JSON.stringify(userAccounts));
-    localStorage.setItem('loggedInUser', JSON.stringify(newUser)); 
-
-    alert('Account created successfully!');
-    window.location.href = 'index.html';
+    signupForm.reset();
+    setTimeout(() => {
+        window.location.href = 'index.html';
+    }, 200);
 });
 
-document.getElementById('login-form-action').addEventListener('submit', function(prevent) {
-    prevent.preventDefault();
+loginForm.addEventListener('submit', function (event) {
+    event.preventDefault();
 
-    let username = loginUsername.value;
-    let password = loginPassword.value;
+    let userFound = userAccounts.find(user => user.username === loginUsername.value && user.password === loginPassword.value);
 
-    let userFound = userAccounts.find(user => user.username === username && user.password === password);
-
-    if (userFound) {
-        alert('Login successful!');
-        localStorage.setItem('loggedInUser', JSON.stringify(userFound));
-        window.location.href = 'index.html';
-    } else {
-        alert('Invalid username or password!');
+    if (!userFound) {
+        setValidationMessage(loginPassword, 'Invalid username or password. Please try again.');
+        return;
     }
+
+    localStorage.setItem('loggedInUser', JSON.stringify(userFound));
+    loginForm.reset();
+    setTimeout(() => {
+        window.location.href = 'index.html';
+    }, 200);
 });
