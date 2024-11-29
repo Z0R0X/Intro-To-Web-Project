@@ -4,9 +4,7 @@ let loggedInUser;
 function addToCart(id) {
     let existingItem = cart.find(item => item.id === id && item.user === loggedInUser.username);
 
-    if (existingItem) {
-        alert("Item is already in the cart!");
-    } else {
+    if (!existingItem) {
         cart.push({ id: id, quantity: 1, user: loggedInUser.username });
         saveCart();
     }
@@ -73,8 +71,9 @@ function loadProducts()
         btn.click(() => {
             if(!loggedInUser)
             {
-                alert("You need to login");
-                window.location.href = "Products.html#hero";
+                $("#login-alert").addClass("show");
+                setTimeout(()=>$("#login-alert").removeClass("show"), 3000)
+                window.location.href = "Products.html#";
                 return;
             }
             if (itemInCart(product.id)) {
