@@ -64,7 +64,7 @@ document.addEventListener("DOMContentLoaded", () => {
         })
         .catch(error => {
             console.error("Error fetching JSON data:", error);
-            initialReviews = []; 
+            initialReviews = [];
             displayReviews();
         });
 
@@ -77,6 +77,14 @@ document.addEventListener("DOMContentLoaded", () => {
         localStorage.setItem("reviews", JSON.stringify(localReviews));
     }
 
+    function shuffleReviews(reviews) {
+        for (let i = reviews.length - 1; i > 0; i--) {
+            let j = Math.floor(Math.random() * (i + 1));
+            [reviews[i], reviews[j]] = [reviews[j], reviews[i]];
+        }
+        return reviews;
+    }
+
     function displayReviews() {
         reviewsContainer.innerHTML = "";
 
@@ -86,12 +94,12 @@ document.addEventListener("DOMContentLoaded", () => {
             let firstReview = localReviews[0];
             reviewsContainer.appendChild(createReviewElement(firstReview));
 
-            let nextReviewsFromJSON = initialReviews.slice(0, 2); 
+            let nextReviewsFromJSON = shuffleReviews([...initialReviews]).slice(0, 2); 
             nextReviewsFromJSON.forEach(review => {
                 reviewsContainer.appendChild(createReviewElement(review));
             });
         } else {
-            const firstThreeReviews = initialReviews.slice(0, 3);
+            let firstThreeReviews = shuffleReviews([...initialReviews]).slice(0, 3);
             firstThreeReviews.forEach(review => {
                 reviewsContainer.appendChild(createReviewElement(review));
             });
@@ -132,12 +140,10 @@ document.addEventListener("DOMContentLoaded", () => {
         let localReviews = loadReviewsFromLocalStorage();
         localReviews.unshift(newReview);
 
-
-         
         let maxReviews = 5;
-     if (localReviews.length > maxReviews) {
-        localReviews.pop(); 
-     }
+        if (localReviews.length > maxReviews) {
+            localReviews.pop(); 
+        }
         saveReviews(localReviews);
 
         displayReviews();
@@ -145,14 +151,8 @@ document.addEventListener("DOMContentLoaded", () => {
         reviewForm.reset(); 
         reviewModal.style.display = "none"; 
     });
-
-    resetButton.addEventListener("click", () => {
-        if (confirm("Are you sure you want to reset the reviews?")) {
-            localStorage.removeItem("reviews");
-            displayReviews();
-        }
-    });
 });
+
 
 document.addEventListener('DOMContentLoaded', function () {
     let loginButton = document.querySelector('.login-button'); 
