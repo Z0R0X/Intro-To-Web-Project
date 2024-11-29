@@ -116,7 +116,9 @@ body {
     box-shadow: 0 5px 15px rgba(0, 255, 0, 0.2);
 }
 
-
+.nutrition-advice p{
+    padding: 10px;
+}
 
 .nutrition-advice {
     flex: 2;
@@ -125,7 +127,7 @@ body {
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 5px 15px rgba(0, 255, 0, 0.2);
-    max-width: 60%;
+    max-width: 70%;
 }
 
 .nutrition-advice p {
