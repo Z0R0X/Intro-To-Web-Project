@@ -217,3 +217,63 @@ footer p {
     margin-top: 30px;
   }
 }
+.lay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.logout {
+  background: var(--background-color);
+  color: var(--text-color);
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  width: 300px;
+  box-shadow: 0 4px 20px rgba(0, 255, 0, 0.3);
+}
+
+.logout p {
+  font-size: 14px;
+  margin-bottom: 20px;
+  text-transform: lowercase;
+}
+
+.confirm-button, .cancel-button {
+  padding: 10px 20px;
+  margin: 5px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+  text-transform: lowercase;
+  transition: all 0.3s ease;
+}
+
+.confirm-button {
+  background: var(--primary-color);
+  color: var(--text-color);
+}
+
+.confirm-button:hover {
+  background: var(--button-hover);
+  box-shadow: 0 4px 15px rgba(0, 255, 0, 0.5);
+}
+
+.cancel-button {
+  background: var(--secondary-color);
+  color: var(--text-color);
+}
+
+.cancel-button:hover {
+  background: var(--button-hover);
+  box-shadow: 0 4px 15px rgba(255, 87, 34, 0.5);
+}
