@@ -5,14 +5,21 @@
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
 }
-
-body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+body{
     height: 100vh;
     background: linear-gradient(135deg, #1f1c2c, #928dab);
     color: white;
+}
+.button-home{
+    position: relative;
+    bottom: 15px;
+    left: 5px;
+}
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  height: 80%;
 }
 #signup-form{
 display: none;
