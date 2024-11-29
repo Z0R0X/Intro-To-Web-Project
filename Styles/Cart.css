@@ -54,10 +54,18 @@ main
     align-items: center;
     justify-content: space-around;
     transition: all 0.3s ease-in-out;
+
 }
 .cartItem:hover {
     box-shadow: var(--box-shadow-hover);
     transform: scale(1.05);
+}
+
+.cartItem.removed
+{
+    background-color: var(--secondary-color);
+    transform: translateX(-200%);
+
 }
 .cartItem img
 {
@@ -117,7 +125,6 @@ main
     -moz-appearance: textfield;
     appearance: textfield;
     border: none;
-    transition: 10s;
 }
 input[type="number"]::-webkit-outer-spin-button,
 input[type="number"]::-webkit-inner-spin-button {
@@ -192,6 +199,24 @@ input[type="number"]::-webkit-inner-spin-button {
     border-radius: 4px; 
 }
 
+#paymentText
+{
+    opacity: 0;
+    transition: 0.4s;
+}
+
+#paymentText.fail
+{
+    opacity: 1;
+    color: red;
+}
+
+#paymentText.succeed
+{
+    opacity: 1;
+    color: var(--primary-color);
+}
+
 #pay-button {
     margin-top: 15px;
     background-color: #4CAF50;
@@ -207,3 +232,4 @@ input[type="number"]::-webkit-inner-spin-button {
 #pay-button:hover {
     background-color: #45a049;
 }
+

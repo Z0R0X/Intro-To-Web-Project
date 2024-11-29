@@ -8,6 +8,7 @@
         <link rel="stylesheet" href="Styles/Cart.css" />
         <script src="Scripts/jquery-3.7.1.min.js"></script>
         <script src="Scripts/Cart.js" refer></script>
+        <script src="Scripts/Common.js" refer></script>
     </head>
     <body>
         <header>
@@ -30,7 +31,7 @@
             <div id="cart">
                 <div id="itemParent"></div>
                 <div id="total">
-                    <div id="subtotal">Subtotal: $1002</div>
+                    <div id="subtotal">Subtotal: <span id="total-text">$1002<span></div>
                     <div id="payment-section">
                         <h3>Payment Method</h3>
                         <label for="card-number">Card Number:</label>
@@ -56,7 +57,8 @@
 
                         <label for="cvv">CVV:</label>
                         <input type="password" id="cvv" placeholder="***" />
-
+                        
+                        <p id="paymentText">Error</p>
                         <button id="pay-button">Pay Now</button>
                     </div>
                 </div>

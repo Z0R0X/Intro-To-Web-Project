@@ -1,12 +1,13 @@
 let cart = [];
+let loggedInUser;
 
 function addToCart(id) {
-    let existingItem = cart.find(item => item.id === id);
+    let existingItem = cart.find(item => item.id === id && item.user === loggedInUser.username);
 
     if (existingItem) {
         alert("Item is already in the cart!");
     } else {
-        cart.push({ id: id, quantity: 1 });
+        cart.push({ id: id, quantity: 1, user: loggedInUser.username });
         saveCart();
     }
 }
@@ -23,13 +24,17 @@ function loadCart() {
 }
 function itemInCart(id)
 {
-    if(cart.find(item => item.id === id))
+    if(!loggedInUser)
+        return false;
+    if(cart.find(item => item.id === id && item.user === loggedInUser.username))
         return true;
 
     return false;
 }
 function loadProducts()
 {
+    loggedInUser = JSON.parse(localStorage.getItem('loggedInUser'));
+
     fetch('./Scripts/Products.json')
   .then(response => response.json())
   .then(data => {
@@ -66,8 +71,14 @@ function loadProducts()
 
         
         btn.click(() => {
+            if(!loggedInUser)
+            {
+                alert("You need to login");
+                window.location.href = "Products.html#hero";
+                return;
+            }
             if (itemInCart(product.id)) {
-                window.location.href = "cart.html";
+                window.location.href = "Cart.html";
             } else {
                 let oldText = $('<span>').addClass('text-out').text("Add To Cart");
                 let newText = $('<span>').addClass('text-in').text("Go To Cart");
@@ -118,7 +129,7 @@ window.addEventListener('hashchange', scrollToHash);
 
 $(document).ready(function () {
     $("#search-bar").on("input", function () {
-        const searchTerm = $(this).val();
+        let searchTerm = $(this).val();
         filterProducts(searchTerm);
     });
 

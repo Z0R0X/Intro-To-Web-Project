@@ -1,16 +1,26 @@
 let cart = [];
-
+let loggedInUser;
 function removeFromCart(id) {
     cart = cart.filter(item => {
-        return item.id !== id
+        return item.id !== id || item.user !== loggedInUser.username
     })
     saveCart();
-    clearItems();
-    loadCart();
+    calculateTotal();
+}
+function calculateTotal() {
+    let total = 0;
+    cart.forEach(item => {
+        if(item.user === loggedInUser.username)
+        {
+        let productPrice = parseFloat($(`#price-${item.id}`).text());
+        total += productPrice;
+        }
+    });
+    $("#total-text").html(`Total: $${total}`);
 }
 
 function changeQuantity(id, amount, price) {
-    let item = cart.find(item => item.id === id);
+    let item = cart.find(item => item.id === id && loggedInUser.username == item.user);
     if (item) {
         item.quantity += amount;
         if (item.quantity <= 0) {
@@ -20,10 +30,17 @@ function changeQuantity(id, amount, price) {
         saveCart();
         $(`#quantity-${id}`).val(item.quantity);
         $(`#price-${id}`).html(newPrice);
-        
+        calculateTotal();
     }
 }
-
+function checkItemParent()
+{
+    if($('#itemParent').children().length === 0)
+    {
+        let header = $("<h1>").html("The Cart is empty!");
+        $('#itemParent').append(header); 
+    }
+}
 function clearItems()
 {
     $("#itemParent").html("");
@@ -38,21 +55,15 @@ function loadCart() {
     if (savedCart) {
         cart = JSON.parse(savedCart);
     }
-    console.log(cart);
 
     fetch('./Scripts/Products.json')
   .then(response => response.json())
   .then(data => {
-    if(cart.length === 0)
-    {
-        let header = $("<h1>").html("The Cart is empty!");
-        $('#itemParent').append(header); 
-    }
     let products = data.products
     for(let cartItem of cart)
     {
         let product = products.find(p => p.id === cartItem.id); 
-            if (!product) continue;
+            if (!product || cartItem.user !== loggedInUser.username) continue;
 
         let item = $("<section>").addClass("cartItem");
         let img = $("<img>").attr("src", product.image);
@@ -80,16 +91,69 @@ function loadCart() {
         
         let deleteButton = $("<button>").html("REMOVE");
         deleteButton.click(()=>{ 
-            removeFromCart(product.id);
+            item.addClass("removed");
+            setTimeout(() => {
+                removeFromCart(product.id);
+                item.remove();
+                
+                checkItemParent();
+            }, 300); 
         });
         item.append(img, namesection, quantityDiv, priceDiv, deleteButton);
         $('#itemParent').append(item); 
     }
+    checkItemParent();
 });
 }
 
 
 $(document).ready(function () {
+    loggedInUser = JSON.parse(localStorage.getItem('loggedInUser'));
+    if(!loggedInUser)
+        window.location.href = "index.html";
+
     loadCart();
+    $('#pay-button').click(function() {
+        let cardNumber = $('#card-number').val().trim();
+        let cardHolder = $('#card-holder').val().trim();
+        let expiryDate = $('#expiry-date').val().trim();
+        let cvv = $('#cvv').val().trim();
+
+        if (cardNumber === '' || cardHolder === '' || expiryDate === '' || cvv === '') {
+            $("#paymentText").html('Please fill in all fields.');
+            $("#paymentText").addClass("fail");
+            setTimeout(()=>$("#paymentText").removeClass("fail"), 1000)
+            return;
+        }
+
+        if (!/^\d{16}$/.test(cardNumber.replace(/\s+/g, ''))) {
+            $("#paymentText").html('Please enter a valid 16-digit card number.');
+            $("#paymentText").addClass("fail");
+            setTimeout(()=>$("#paymentText").removeClass("fail"), 1000)
+            return;
+        }
+        if (!/^(0[1-9]|1[0-2])\/\d{2}$/.test(expiryDate)) {
+            $("#paymentText").html('Please enter a valid expiry date in MM/YY format.');
+            $("#paymentText").addClass("fail");
+            setTimeout(()=>$("#paymentText").removeClass("fail"), 1000);
+            return;
+        }
+
+        if (!/^\d{3,4}$/.test(cvv)) {
+            $("#paymentText").html('Please enter a valid CVV.');
+            $("#paymentText").addClass("fail");
+            setTimeout(()=>$("#paymentText").removeClass("fail"), 1000);
+            return;
+        }
+
+        $("#itemParent").children().addClass("removed");
+        cart = cart.filter(item=>{return item.user !== loggedInUser.username;});
+        saveCart();
+        $("#paymentText").html('Payment successful! Thank you for your purchase.');
+        $("#paymentText").addClass("succeed");
+        setTimeout(()=>{$("#paymentText").removeClass("succeed"); location.reload();}, 1000)
+    });
+
+    setTimeout(()=>calculateTotal(), 100)
 });
 
