@@ -6,9 +6,10 @@ document.addEventListener('DOMContentLoaded', function () {
         loginButton.textContent = loggedInUser.name;
         loginButton.href = '#';
         let cartButton = document.createElement('a');
-        cartButton.innerHTML = "Cart";
+        let img = document.createElement('img');
+        img.src = "Images/cart.png"
+        cartButton.appendChild(img);
         cartButton.href = "Cart.html";
-        cartButton.classList.add("login-button");
         document.querySelector(".login-section").appendChild(cartButton);
 
         loginButton.addEventListener('click', function () {
