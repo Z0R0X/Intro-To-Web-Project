@@ -242,52 +242,6 @@ hr
     background-color: black;
 }
 
-  #gift-certificate {
-    padding: 20px;
-    background-color:var(--button-hover);
-    color: white;
-}
-
-#gift-certificate h2 {
-    text-align: center;
-    color: #00ff00;
-}
-
-#gift-certificate p {
-    text-align: center;
-    margin: 10px 0;
-}
-
-#redeem-form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 15px;
-}
-
-#redeem-form input {
-    width: 50%;
-    padding: 10px;
-    font-size: 16px;
-    border: 1px solid #00ff00;
-    border-radius: 5px;
-    outline: none;
-}
-
-#redeem-form button {
-    padding: 10px 20px;
-    background-color: #00ff00;
-    color: black;
-    font-size: 16px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-#redeem-form button:hover {
-    background-color: #00cc00;
-}
-
 @media screen and (max-width: 1256px) {
 
     #hero p
