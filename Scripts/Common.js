@@ -20,14 +20,14 @@ function LogoutConfirmation() {
     message.className = 'logout';
 
     let modalMessage = document.createElement('p');
-    modalMessage.textContent = 'do you want to log out?';
+    modalMessage.textContent = 'Are you sure you want to log out?';
 
     let confirmButton = document.createElement('button');
-    confirmButton.textContent = 'yes';
+    confirmButton.textContent = 'Yes';
     confirmButton.className = 'confirm-button';
 
     let cancelButton = document.createElement('button');
-    cancelButton.textContent = 'cancel';
+    cancelButton.textContent = 'Cancel';
     cancelButton.className = 'cancel-button';
 
     message.appendChild(modalMessage);
