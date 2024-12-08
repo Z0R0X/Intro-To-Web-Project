@@ -9,11 +9,18 @@ document.addEventListener('DOMContentLoaded', () => {
         let activity = document.getElementById('activity').value;
         let resultDisplay = document.getElementById('result');
 
-        if (isNaN(age) || isNaN(height) || isNaN(weight)) {
-            resultDisplay.innerText = "Please enter valid numbers for age, height, and weight.";
+        if (isNaN(age)) {
+            resultDisplay.innerText = "Please enter a valid number for age.";
             return;
         }
-
+        if (isNaN(height)) {
+            resultDisplay.innerText = "Please enter a valid number for height.";
+            return;
+        }
+        if (isNaN(weight)) {
+            resultDisplay.innerText = "Please enter a valid number for weight.";
+            return;
+        }
         let bmr;
         if (gender === "male") {
             bmr = 88.36 + (13.4 * weight) + (4.8 * height) - (5.7 * age);

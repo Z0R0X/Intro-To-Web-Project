@@ -56,6 +56,7 @@ signupForm.addEventListener('submit', function (event) {
 
     userAccounts.push(newUser);
     localStorage.setItem('userAccounts', JSON.stringify(userAccounts));
+    localStorage.setItem('loggedInUser', JSON.stringify(newUser));
     signupForm.reset();
     setTimeout(() => {
         window.location.href = 'index.html';
