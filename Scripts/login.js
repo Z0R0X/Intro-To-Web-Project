@@ -36,8 +36,8 @@ switchTologin.addEventListener('click', function (event) {
 
 signupForm.addEventListener('submit', function (event) {
     event.preventDefault();
-
-    if (userAccounts.some(user => user.username === newUsername.value)) {
+let sameuser=userAccounts.some(user => user.username === newUsername.value);
+    if (!sameuser) {
         setValidationMessage(newUsername, 'This username is already taken. Please choose a different one.');
         return;
     }
@@ -66,10 +66,15 @@ signupForm.addEventListener('submit', function (event) {
 loginForm.addEventListener('submit', function (event) {
     event.preventDefault();
 
-    let userFound = userAccounts.find(user => user.username === loginUsername.value && user.password === loginPassword.value);
-
+    let userFound = userAccounts.find(user => user.username === loginUsername.value);
+    
     if (!userFound) {
-        setValidationMessage(loginPassword, 'Invalid username or password. Please try again.');
+        setValidationMessage(loginUsername, 'Invalid username. Please try again.');
+        return;
+    }
+    
+    if (userFound.password !== loginPassword.value) {
+        setValidationMessage(loginPassword, 'Invalid password. Please try again.');
         return;
     }
 
