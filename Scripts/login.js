@@ -37,7 +37,7 @@ switchTologin.addEventListener('click', function (event) {
 signupForm.addEventListener('submit', function (event) {
     event.preventDefault();
 let sameuser=userAccounts.find(user => user.username === newUsername.value);
-    if (!sameuser) {
+    if (sameuser) {
         setValidationMessage(newUsername, 'This username is already taken. Please choose a different one.');
         return;
     }
