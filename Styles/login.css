@@ -85,12 +85,12 @@ input:focus {
 
 .options a {
     text-decoration: none;
-    color: var(--secondary-color);
+    color: var(--primary-color);
     transition: color 0.3s;
 }
 
 .options a:hover {
-    color: var(--primary-color);
+    color: green;
 }
 
 button {
@@ -121,11 +121,12 @@ p {
 
 p a {
     text-decoration: none;
-    color: var(--secondary-color);
+    color: var(--primary-color);
     font-weight: bold;
     transition: color 0.3s;
 }
 
-p a:hover {
-    color: var(--primary-color);
+p a:hover{
+    color:green;
 }
+

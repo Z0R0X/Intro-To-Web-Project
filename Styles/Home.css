@@ -1,6 +1,5 @@
 :root {
     --primary-color: #00ff00;
-    --secondary-color: #ff5722;
     --background-color: #000000;
     --text-color: #ffffff;
     --button-hover: #1e1e1e;
@@ -20,7 +19,7 @@ header
     height: 700px;
 }
 .hero-section{
-    width: 100%;
+    width: 75%;
     font-size: 48px;
     color: white;
 }
@@ -29,7 +28,10 @@ header
     position: relative;
     left: 200px;
     top: 50px;
+
 }
+
+
 
 body {
     background-color: var(--background-color);
@@ -141,6 +143,10 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+input::placeholder{
+    color:white;
 }
 
 .input label {

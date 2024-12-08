@@ -70,8 +70,13 @@ document.addEventListener("DOMContentLoaded", () => {
         let foodName = foodInput.value;
         let grams = parseFloat(gramsInput.value);
 
-        if (!foodName || isNaN(grams) || grams <= 0) {
-            displayErrorMessage("Please enter a valid food item and grams.");
+        if (!foodName || isNaN(grams)) {
+            displayErrorMessage("Please enter a valid food item and grams");
+            return;
+        }
+
+        if (grams<=0){
+            displayErrorMessage("Please enter valid grams!");
             return;
         }
 
@@ -88,7 +93,7 @@ document.addEventListener("DOMContentLoaded", () => {
             foodInput.value = "";
             gramsInput.value = "";
         } else {
-            displayErrorMessage("Food item not found in the database.");
+            displayErrorMessage("Food item not found in the database!");
         }
     });
 

@@ -62,7 +62,7 @@ body
 .input-group label {
     font-size: 1.2rem;
     margin-bottom: 5px;
-    color: var(--secondary-color);
+    color:var(--primary-color);
     animation: bounceIn 0.5s;
 }
 
@@ -94,6 +94,7 @@ body
     transition: transform 0.3s ease, background-color 0.3s;
     height: 50px; 
     width: 150px; 
+    font-weight: bold;
 }
 
 
@@ -160,7 +161,7 @@ body
 
 .macros-table tfoot td {
     font-weight: bold;
-    color: var(--secondary-color);
+    color: white;
 }
 
 @keyframes fadeIn {

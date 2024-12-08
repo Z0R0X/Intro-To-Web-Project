@@ -4,7 +4,7 @@
     --background-color: #000000;
     --text-color: #ffffff;
     --button-hover: #1e1e1e;
-    --gradient-bg: linear-gradient(135deg, #1e1e1e, #000000);
+    --gradient-bg: linear-gradient(135deg, #070707, #000000);
     --box-shadow-hover: 0 10px 20px rgba(0, 255, 0, 0.6);
   }
 
@@ -60,7 +60,7 @@
 
 .text-content h2 {
     font-size: 32px;
-    color: var(--secondary-color);
+    color: var(--primary-color);
     margin-bottom: 20px;
 }
 
